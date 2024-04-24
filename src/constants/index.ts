@@ -9,6 +9,11 @@ export const navLinks = [
       name: "Projects",
       path: "/projects",
    },
+   {
+      id: "3",
+      name: "Contact",
+      path: "/contact",
+   },
 ];
 
 export const posts = [

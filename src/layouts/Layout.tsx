@@ -11,7 +11,7 @@ const Layout = (props: React.PropsWithChildren<Record<string, unknown>>) => {
       AOS.init();
    }, []);
    return (
-      <ThemeProvider defaultTheme="system"  storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
          <Navbar />
          <main className="max-w-screen-sm mx-auto mt-28 lg:p-0 px-5" id="top">
             {props.children}

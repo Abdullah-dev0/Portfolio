@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import BlogsDeatils from "./pages/BlogsDeatils.tsx";
 import BlogsPage from "./pages/BlogsPage.tsx";
+import ContactPage from "./pages/ContactPage.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import ProjectDetails from "./pages/ProjectDetails.tsx";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             element: <ProjectDetails />,
          },
       ],
+   },
+   {
+      path: "/contact",
+      element: <ContactPage />,
    },
 
    {
