@@ -11,9 +11,9 @@ const ContactPage = () => {
                <form
                   className="flex flex-col gap-5"
                   name="contact"
-                  method="POST"
+                
                   // @ts-ignore
-                  netlify
+                  data-netlify="true"
                >
                   <div>
                      <label
@@ -22,7 +22,7 @@ const ContactPage = () => {
                      >
                         Your email
                      </label>
-                     <Input
+                     <input
                         type="email"
                         id="email"
                         name="email"
@@ -38,7 +38,7 @@ const ContactPage = () => {
                      >
                         Name
                      </label>
-                     <Input
+                     <input
                         type="text"
                         id="Name"
                         name="name"
@@ -54,13 +54,13 @@ const ContactPage = () => {
                      >
                         Your message
                      </label>
-                     <Textarea
+                     <textarea
                         id="message"
                         name="message"
                         rows={6}
                         className="block p-2.5 w-full text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white  dark:focus:border-primary-500"
                         placeholder="Leave a comment..."
-                     ></Textarea>
+                     ></textarea>
                   </div>
                   <Button
                      type="submit"
