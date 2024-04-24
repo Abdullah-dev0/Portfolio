@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/layouts/Layout";
 
 const ContactPage = () => {
@@ -8,13 +6,7 @@ const ContactPage = () => {
       <Layout>
          <section>
             <div className="px-4 lg:p-0 text-base">
-               <form
-                  className="flex flex-col gap-5"
-                  name="contact"
-                
-                  // @ts-ignore
-                  data-netlify="true"
-               >
+               <form method="post" name="Contact Form" data-netlify="true">
                   <div>
                      <label
                         htmlFor="email"
