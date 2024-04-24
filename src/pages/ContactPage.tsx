@@ -8,11 +8,12 @@ const ContactPage = () => {
       <Layout>
          <section>
             <div className="px-4 lg:p-0 text-base">
-               {/* @ts-ignore */}
                <form
-                  action="#"
                   className="flex flex-col gap-5"
-                  data-netlify="true"
+                  name="contact"
+                  method="POST"
+                  // @ts-ignore
+                  netlify
                >
                   <div>
                      <label
@@ -63,7 +64,7 @@ const ContactPage = () => {
                   </div>
                   <Button
                      type="submit"
-                     className="py-3 px-5  font-medium text-center text-white rounded-lg bg-primary sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600"
+                     className="px-5  font-medium text-center text-white rounded-lg bg-primary sm:w-fit hover:opacity-80 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600"
                   >
                      Send message
                   </Button>
