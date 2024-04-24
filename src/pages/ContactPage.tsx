@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Button } from "@/components/ui/button";
 import Layout from "@/layouts/Layout";
 
@@ -6,7 +7,12 @@ const ContactPage = () => {
       <Layout>
          <section>
             <div className="px-4 lg:p-0 text-base">
-               <form method="post" name="Contact Form" data-netlify="true">
+               <form
+                  action="post"
+                  name="Contact-Form"
+                  netlify
+                  className="flex flex-col gap-5"
+               >
                   <div>
                      <label
                         htmlFor="email"
