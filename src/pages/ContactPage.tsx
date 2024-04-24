@@ -9,7 +9,7 @@ const ContactPage = () => {
          <section>
             <div className="px-4 lg:p-0 text-base">
                {/* @ts-ignore */}
-               <form method="post" className="flex flex-col gap-5">
+               <form method="post" netlify className="flex flex-col gap-5">
                   <div>
                      <label
                         htmlFor="email"
