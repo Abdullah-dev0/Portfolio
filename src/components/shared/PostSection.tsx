@@ -5,8 +5,6 @@ import Posts from "./Posts";
 const PostSection = () => {
    const { blogs } = useGetAllPosts();
 
-   if (!blogs) return null;
-
    return (
       <section className="w-full">
          <div className="flex text-[18px] max-sm:text-[15px] justify-between flex-wrap">

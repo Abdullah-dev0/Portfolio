@@ -37,16 +37,23 @@ export function useGetPosts(slug: string) {
 }
 
 export const useGetAllPosts = () => {
-   const [blogs, setBlogs] = useState<any>(null);
+   const [blogs, setBlogs] = useState<any>([]);
+   const [loading, setLoading] = useState(true);
    useEffect(() => {
       const blogs = async () => {
-         const response: any = await getAllPosts();
+         try {
+            const response: any = await getAllPosts();
 
-         setBlogs(response.publication.posts.edges);
+            setBlogs(response.publication.posts.edges);
+         } catch (error) {
+            console.log(error);
+         } finally {
+            setLoading(false);
+         }
       };
 
       blogs();
    }, []);
 
-   return { blogs };
+   return { blogs, loading };
 };
