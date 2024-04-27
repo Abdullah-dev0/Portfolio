@@ -2,6 +2,7 @@ import Loader from "@/components/shared/Loader";
 import { Button } from "@/components/ui/button";
 import { useGetPosts } from "@/Hooks/useGetPosts";
 import Layout from "@/Layout";
+import { convertTimestampToReadableDate } from "@/lib/utils";
 import { Link, useParams } from "react-router-dom";
 type Params = {
    slug: string;
@@ -31,16 +32,23 @@ const BlogsDeatils = () => {
                   Back to Blogs
                </Button>
             </Link>
-            <div className="mt-12 flex flex-col gap-6">
-               <p>{blogs?.publishedAt.toString()}</p>
-               <div>
+            <div className="mt-12">
+               <p>
+                  <span>Published At : </span>
+                  {convertTimestampToReadableDate(blogs.publishedAt)}
+               </p>
+               <p>
+                  <span>Updated At : </span>
+                  {convertTimestampToReadableDate(blogs.updatedAt)}
+               </p>
+               <div className="w-full my-6" >
                   <img src={blogs.coverImage.url} alt="" />
                </div>
                <h1 className="max-sm:text-xl text-3xl font-bold mt-3">
-                  {blogs?.title}
+                  {blogs.title}
                </h1>
                <p className="mt-3 text-lg">
-                  {blogs?.content?.text.substring(0, 600)}
+                  {blogs.content.text.substring(0, 600)}
                </p>
             </div>
          </div>
