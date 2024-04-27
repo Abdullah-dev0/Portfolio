@@ -10,7 +10,7 @@ const Layout = (props: React.PropsWithChildren<Record<string, unknown>>) => {
    return (
       <>
          <Navbar />
-         <main className="max-w-screen-sm mx-auto mt-28 lg:p-0 px-5" id="top">
+         <main className="max-w-screen-sm mx-auto mt-32 lg:p-0 px-5" id="top">
             {props.children}
          </main>
          <Footer />

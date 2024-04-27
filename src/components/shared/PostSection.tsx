@@ -1,8 +1,12 @@
-import { posts } from "@/constants";
+import { useGetAllPosts } from "@/Hooks/useGetPosts";
 import { Link } from "react-router-dom";
 import Posts from "./Posts";
 
 const PostSection = () => {
+   const { blogs } = useGetAllPosts();
+
+   if (!blogs) return null;
+
    return (
       <section className="w-full">
          <div className="flex text-[18px] max-sm:text-[15px] justify-between flex-wrap">
@@ -12,12 +16,12 @@ const PostSection = () => {
             </Link>
          </div>
          <div>
-            {posts.slice(0, 3).map((post) => (
-               <Link to={`blogs/${post.slug}`} key={post.id}>
+            {blogs.slice(0, 2).map((post: any) => (
+               <Link to={`blogs/${post.node.slug}`} key={post.node.id}>
                   <Posts
-                     key={post.id}
-                     slug={post.slug}
-                     description={post.description}
+                     key={post.node.id}
+                     slug={post.node.title}
+                     description={post.node.brief}
                   />
                </Link>
             ))}

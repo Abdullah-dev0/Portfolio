@@ -32,16 +32,19 @@ const BlogsDeatils = () => {
                   Back to Blogs
                </Button>
             </Link>
-            <div className="mt-12">
-               <p>
-                  <span>Published At : </span>
-                  {convertTimestampToReadableDate(blogs.publishedAt)}
-               </p>
-               <p>
-                  <span>Updated At : </span>
-                  {convertTimestampToReadableDate(blogs.updatedAt)}
-               </p>
-               <div className="w-full my-6" >
+            <div className="mt-12 flex flex-col gap-6">
+               <div className="font-medium">
+                  <p>
+                     <span>Published At : </span>
+                     {convertTimestampToReadableDate(blogs.publishedAt)}
+                  </p>
+                  <p>
+                     <span>Updated At : </span>
+                     {convertTimestampToReadableDate(blogs.updatedAt)}
+                  </p>
+               </div>
+
+               <div className="w-full">
                   <img src={blogs.coverImage.url} alt="" />
                </div>
                <h1 className="max-sm:text-xl text-3xl font-bold mt-3">
