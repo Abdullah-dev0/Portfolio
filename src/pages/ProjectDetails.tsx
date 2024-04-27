@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { projects } from "@/constants";
-import Layout from "@/layouts/Layout";
+import Layout from "@/Layout";
 import { Link, useParams } from "react-router-dom";
 type Params = {
    slug: string;

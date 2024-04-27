@@ -1,6 +1,6 @@
 import Posts from "@/components/shared/Posts";
 import { projects } from "@/constants";
-import Layout from "@/layouts/Layout";
+import Layout from "@/Layout";
 import { Link } from "react-router-dom";
 
 const ProjectsPage = () => {

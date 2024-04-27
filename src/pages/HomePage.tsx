@@ -1,7 +1,7 @@
 import PostSection from "@/components/shared/PostSection";
 
 import ProjectSection from "@/components/shared/ProjectSection";
-import Layout from "../layouts/Layout";
+import Layout from "../Layout";
 
 const HomePage = () => {
    return (

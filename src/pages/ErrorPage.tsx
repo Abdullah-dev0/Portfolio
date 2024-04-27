@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Layout from "@/layouts/Layout";
+import Layout from "@/Layout";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {

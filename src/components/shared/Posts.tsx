@@ -8,7 +8,7 @@ type Post = {
 const Posts = ({ slug, description }: Post) => {
    return (
       <section
-         className="mt-6 border p-3 rounded-lg hover:bg-slate-900 light: transition-all duration-400 group "
+         className="mt-6 border p-3 rounded-lg dark:hover:bg-slate-900 hover:bg-slate-300 transition-all duration-400 group "
          data-aos="zoom-in-up"
          data-aos-offset="100"
          data-aos-delay="100"
@@ -19,9 +19,7 @@ const Posts = ({ slug, description }: Post) => {
       >
          <div className="flex justify-between items-center">
             <div className="w-full">
-               <h1 className="text-[18px] truncate capitalize">
-                  {slug}
-               </h1>
+               <h1 className="text-[18px] truncate capitalize">{slug}</h1>
                <p className="text-[15px] truncate "> {description} </p>
             </div>
             <ArrowRight

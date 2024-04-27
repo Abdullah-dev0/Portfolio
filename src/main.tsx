@@ -1,6 +1,6 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "./components/shared/theme-provider.tsx";
 import "./index.css";
 import BlogsDeatils from "./pages/BlogsDeatils.tsx";
 import BlogsPage from "./pages/BlogsPage.tsx";
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-   <React.StrictMode>
+   <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
       <RouterProvider router={router} />
-   </React.StrictMode>
+   </ThemeProvider>
 );
