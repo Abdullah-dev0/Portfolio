@@ -20,7 +20,7 @@ const getPosts = async (slug: string) => {
       title
       updatedAt
       content {
-        text
+        markdown
       }
     }
   }

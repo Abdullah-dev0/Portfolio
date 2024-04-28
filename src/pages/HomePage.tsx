@@ -1,38 +1,12 @@
 import PostSection from "@/components/shared/PostSection";
 
 import ProjectSection from "@/components/shared/ProjectSection";
-import {
-   Dialog,
-   DialogContent,
-   DialogDescription,
-   DialogHeader,
-   DialogTitle,
-   DialogTrigger,
-} from "@/components/ui/dialog";
 
-import { useEffect } from "react";
 import Layout from "../Layout";
 
 const HomePage = () => {
-   useEffect(() => {
-      setTimeout(() => {
-         return document.getElementById("open")?.click();
-      }, 3000);
-   }, []);
    return (
       <Layout>
-         <Dialog>
-            <DialogTrigger id="open"></DialogTrigger>
-            <DialogContent>
-               <DialogHeader>
-                  <DialogTitle>Are you absolutely sure?</DialogTitle>
-                  <DialogDescription>
-                     This action cannot be undone. This will permanently delete
-                     your account and remove your data from our servers.
-                  </DialogDescription>
-               </DialogHeader>
-            </DialogContent>
-         </Dialog>
          <div
             className="flex gap-8 flex-col w-full"
             data-aos="zoom-in-up"

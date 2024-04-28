@@ -1,4 +1,5 @@
 import Loader from "@/components/shared/Loader";
+import MyMarkdownComponent from "@/components/shared/Markdown";
 import { Button } from "@/components/ui/button";
 import { useGetPosts } from "@/Hooks/useGetPosts";
 import Layout from "@/Layout";
@@ -13,10 +14,9 @@ const BlogsDeatils = () => {
    const { slug } = params as Params;
    const { blogs, loading } = useGetPosts(slug);
 
-   if (loading) return <Loader />;
-
    return (
       <Layout>
+         {loading && <Loader />}
          <div
             key={blogs?.id}
             data-aos="zoom-in-up"
@@ -50,9 +50,9 @@ const BlogsDeatils = () => {
                <h1 className="max-sm:text-xl text-3xl font-bold mt-3">
                   {blogs.title}
                </h1>
-               <p className="mt-3 text-lg">
-                  {blogs.content.text.substring(0, 600)}
-               </p>
+               <div className="space-y-6 text-[18px]">
+                  <MyMarkdownComponent markdown={blogs.content.markdown} />
+               </div>
             </div>
          </div>
       </Layout>

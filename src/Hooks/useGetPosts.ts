@@ -13,7 +13,7 @@ export function useGetPosts(slug: string) {
          url: "",
       },
       content: {
-         text: "",
+         markdown: "",
       },
    });
    const [loading, setLoading] = useState(true);

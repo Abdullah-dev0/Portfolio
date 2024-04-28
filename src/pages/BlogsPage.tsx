@@ -7,12 +7,11 @@ import { Link } from "react-router-dom";
 const BlogsPage = () => {
    const { blogs, loading } = useGetAllPosts();
 
-   if (loading) return <Loader />;
-
    return (
       <Layout>
          <h1 className="text-4xl font-bold">Blogs</h1>
          <div className="flex flex-col mt-8">
+            {loading && <Loader />}
             {blogs!.map((blog: any) => (
                <Link key={blog.node?.id} to={`${blog.node?.slug}`}>
                   <Posts

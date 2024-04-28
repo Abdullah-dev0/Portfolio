@@ -8,6 +8,6 @@ export type Post = {
       url: string;
    };
    content: {
-      text: string;
+      markdown: string;
    };
 };
