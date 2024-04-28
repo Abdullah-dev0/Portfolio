@@ -1,5 +1,4 @@
 import Loader from "@/components/shared/Loader";
-import MyMarkdownComponent from "@/components/shared/Markdown";
 import { Button } from "@/components/ui/button";
 import { useGetPosts } from "@/Hooks/useGetPosts";
 import Layout from "@/Layout";
@@ -45,14 +44,15 @@ const BlogsDeatils = () => {
                </div>
 
                <div className="w-full">
-                  <img src={blogs.coverImage.url} alt="" />
+                  <img src={blogs.coverImage.url} alt="Blog Image" />
                </div>
                <h1 className="max-sm:text-xl text-3xl font-bold mt-3">
                   {blogs.title}
                </h1>
-               <div className="space-y-6 text-[18px]">
-                  <MyMarkdownComponent markdown={blogs.content.markdown} />
-               </div>
+               <p className="text-md">{blogs.brief}</p>
+               <Link to={blogs.url} className="underline" target="_blank">
+                  <Button className="text-lg">Read More</Button>
+               </Link>
             </div>
          </div>
       </Layout>

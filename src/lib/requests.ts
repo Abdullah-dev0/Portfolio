@@ -19,15 +19,17 @@ const getPosts = async (slug: string) => {
       }
       title
       updatedAt
+     brief
       content {
-        markdown
+        
+         markdown
       }
     }
   }
 }
   `;
 
-   const respose = request(endPoint!, query, { userId });
+   const respose = await request(endPoint!, query, { userId });
 
    return respose;
 };
@@ -36,8 +38,7 @@ const getAllPosts = async () => {
    const query = gql`
       query GetUserArticles {
          publication(id: "${userId}") {
-            
-            posts(first: 20) {
+            posts(first: 10) {
                edges {
                   node {
                      id
@@ -51,9 +52,9 @@ const getAllPosts = async () => {
       }
    `;
 
-   const respose = request(endPoint!, query, { userId });
+   const response = await request(endPoint!, query, { userId });
 
-   return respose;
+   return response;
 };
 
 export { getAllPosts, getPosts };

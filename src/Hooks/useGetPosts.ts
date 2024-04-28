@@ -9,11 +9,9 @@ export function useGetPosts(slug: string) {
       title: "",
       publishedAt: "",
       updatedAt: "",
+      brief: "",
       coverImage: {
          url: "",
-      },
-      content: {
-         markdown: "",
       },
    });
    const [loading, setLoading] = useState(true);
@@ -37,7 +35,7 @@ export function useGetPosts(slug: string) {
 }
 
 export const useGetAllPosts = () => {
-   const [blogs, setBlogs] = useState<any>([]);
+   const [blogs, setBlogs] = useState<[]>([]);
    const [loading, setLoading] = useState(true);
    useEffect(() => {
       const blogs = async () => {
@@ -45,6 +43,7 @@ export const useGetAllPosts = () => {
             const response: any = await getAllPosts();
 
             setBlogs(response.publication.posts.edges);
+            console.log("response in Hook", response);
          } catch (error) {
             console.log(error);
          } finally {

@@ -4,10 +4,8 @@ export type Post = {
    publishedAt: string;
    title: string;
    updatedAt: string;
+   brief: string;
    coverImage: {
       url: string;
-   };
-   content: {
-      markdown: string;
    };
 };
