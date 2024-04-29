@@ -13,9 +13,10 @@ const ContactPage = () => {
                   className="flex flex-col gap-5"
                   method="post"
                   name="contant-form"
+                  
                   data-netlify="true"
                >
-                  <input type="hidden" name="contant" value="contact-form" />
+                  <input type="hidden" name="content-form" value="contact-form" />
                   <div>
                      <label
                         htmlFor="email"

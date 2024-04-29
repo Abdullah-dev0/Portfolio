@@ -2,11 +2,52 @@ import PostSection from "@/components/shared/PostSection";
 
 import ProjectSection from "@/components/shared/ProjectSection";
 
+import { Button } from "@/components/ui/button";
+import {
+   Dialog,
+   DialogClose,
+   DialogContent,
+   DialogDescription,
+} from "@/components/ui/dialog";
+import { useEffect, useState } from "react";
 import Layout from "../Layout";
 
 const HomePage = () => {
+   const [show, setShow] = useState<boolean>(false);
+
+   useEffect(() => {
+      const hasVisitedBefore = localStorage.getItem("hasVisitedBefore");
+
+      window.onbeforeunload = () => {
+         localStorage.removeItem("hasVisitedBefore");
+      };
+
+      if (!hasVisitedBefore) {
+         setTimeout(() => {
+            setShow(true);
+            localStorage.setItem("hasVisitedBefore", "true");
+         }, 2000);
+      }
+   }, []);
+
    return (
       <Layout>
+         <Dialog open={show} onOpenChange={() => setShow(false)}>
+            <DialogContent>
+               <DialogDescription className="sm:text-xl mt-4 text-sm">
+                  This webiste is still under development. Please be patient.
+               </DialogDescription>
+               <DialogClose asChild className="mt-4">
+                  <Button
+                     type="button"
+                     variant="secondary"
+                     className="focus:outline-none focus:ring-0 focus-visible:ring-offset-0 border-primary focus-visible:ring-transparent focus:border-none  focus:border-transparent"
+                  >
+                     Close
+                  </Button>
+               </DialogClose>
+            </DialogContent>
+         </Dialog>
          <div
             className="flex gap-8 flex-col w-full"
             data-aos="zoom-in-up"

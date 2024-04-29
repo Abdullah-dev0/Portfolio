@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const BlogsPage = () => {
    const { blogs, loading } = useGetAllPosts();
-   console.log(blogs, loading);
 
    return (
       <Layout>
