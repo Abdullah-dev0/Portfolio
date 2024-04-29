@@ -12,13 +12,10 @@ const ContactPage = () => {
                   target="_blank"
                   className="flex flex-col gap-5"
                   method="post"
+                  name="contant-form"
                   data-netlify="true"
                >
-                  {/* <input
-                     type="hidden"
-                     name="_next"
-                     value="https://yourdomain.co/thanks.html"
-                  ></input> */}
+                  <input type="hidden" name="contant" value="contact-form" />
                   <div>
                      <label
                         htmlFor="email"
@@ -31,7 +28,7 @@ const ContactPage = () => {
                         id="email"
                         name="email"
                         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                        placeholder="name@.com"
+                        placeholder="yourname@.com"
                         required
                      />
                   </div>
