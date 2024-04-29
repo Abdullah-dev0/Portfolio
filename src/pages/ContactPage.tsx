@@ -13,10 +13,13 @@ const ContactPage = () => {
                   className="flex flex-col gap-5"
                   method="post"
                   name="contant-form"
-                  
                   data-netlify="true"
                >
-                  <input type="hidden" name="content-form" value="contact-form" />
+                  <input
+                     type="hidden"
+                     name="content-form"
+                     value="contact-form"
+                  />
                   <div>
                      <label
                         htmlFor="email"
@@ -64,10 +67,7 @@ const ContactPage = () => {
                         placeholder="Leave a comment..."
                      ></Textarea>
                   </div>
-                  <Button
-                     type="submit"
-                     className="px-5  font-medium text-center text-white rounded-lg bg-primary sm:w-fit hover:opacity-80 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600"
-                  >
+                  <Button type="submit" className="sm:w-fit">
                      Send message
                   </Button>
                </form>
