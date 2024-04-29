@@ -12,7 +12,6 @@ const ContactPage = () => {
                   target="_blank"
                   className="flex flex-col gap-5"
                   method="POST"
-                  name="contact"
                   data-netlify="true"
                >
                   {/* <input
