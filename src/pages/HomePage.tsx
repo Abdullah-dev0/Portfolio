@@ -2,13 +2,7 @@ import PostSection from "@/components/shared/PostSection";
 
 import ProjectSection from "@/components/shared/ProjectSection";
 
-import { Button } from "@/components/ui/button";
-import {
-   Dialog,
-   DialogClose,
-   DialogContent,
-   DialogDescription,
-} from "@/components/ui/dialog";
+import Model from "@/components/shared/Model";
 import { useEffect, useState } from "react";
 import Layout from "../Layout";
 
@@ -32,22 +26,13 @@ const HomePage = () => {
 
    return (
       <Layout>
-         <Dialog open={show} onOpenChange={() => setShow(false)}>
-            <DialogContent>
-               <DialogDescription className="sm:text-xl mt-4 text-sm">
-                  This webiste is still under development. Please be patient.
-               </DialogDescription>
-               <DialogClose asChild className="mt-4">
-                  <Button
-                     type="button"
-                     variant="secondary"
-                     className="focus:outline-none focus:ring-0 focus-visible:ring-offset-0 border-primary focus-visible:ring-transparent focus:border-none  focus:border-transparent"
-                  >
-                     Close
-                  </Button>
-               </DialogClose>
-            </DialogContent>
-         </Dialog>
+         <Model
+            title="Under Maintenance"
+            type="underMaintenance"
+            description="This webiste is still under development. Please be patient."
+            handle={() => setShow(false)}
+            show={show}
+         />
          <div
             className="flex gap-8 flex-col w-full"
             data-aos="zoom-in-up"

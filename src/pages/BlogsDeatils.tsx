@@ -1,6 +1,6 @@
 import Loader from "@/components/shared/Loader";
 import { Button } from "@/components/ui/button";
-import { useGetPosts } from "@/Hooks/useGetPosts";
+import { useGetPosts } from "@/Hooks/useResquests";
 import Layout from "@/Layout";
 import { convertTimestampToReadableDate } from "@/lib/utils";
 import { Link, useParams } from "react-router-dom";

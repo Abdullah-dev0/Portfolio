@@ -1,4 +1,4 @@
-import { useGetAllPosts } from "@/Hooks/useGetPosts";
+import { useGetAllPosts } from "@/Hooks/useResquests";
 import { Link } from "react-router-dom";
 import Posts from "./Posts";
 

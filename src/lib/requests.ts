@@ -1,12 +1,16 @@
 import { gql, request } from "graphql-request";
 
-const endPoint: string | undefined = import.meta.env.VITE_HASHNODE_URL;
-const userId: string | undefined = import.meta.env.VITE_HASHNODE_USER_ID;
+const endPoint: string = import.meta.env.VITE_HASHNODE_URL;
+const publicationId: string = import.meta.env.VITE_HASHNODE_USER_ID;
+
+if (!endPoint || !publicationId) {
+   throw new Error("Environment variables not found");
+}
 
 const getPosts = async (slug: string) => {
    const query = gql`
-    query GetUserArticles {
-  publication(id: "${userId}") {
+    query GetUserArticles( $publicationId: ObjectId!) {
+  publication(id:  $publicationId) {
     title
     descriptionSEO
     url
@@ -29,16 +33,16 @@ const getPosts = async (slug: string) => {
 }
   `;
 
-   const respose = await request(endPoint!, query, { userId });
+   const respose = await request(endPoint, query, { publicationId });
 
    return respose;
 };
 
 const getAllPosts = async () => {
    const query = gql`
-      query GetUserArticles {
-         publication(id: "${userId}") {
-            posts(first:7) {
+      query GetUserArticles($publicationId: ObjectId!) {
+         publication(id: $publicationId) {
+            posts(first: 7) {
                edges {
                   node {
                      id
@@ -52,9 +56,31 @@ const getAllPosts = async () => {
       }
    `;
 
-   const response = await request(endPoint!, query, { userId });
+   const response = await request(endPoint, query, { publicationId });
 
    return response;
 };
+
+export async function subscribeToNewsletter(email: string) {
+   const mutation = gql`
+      mutation subscribeToNewsletter(
+         $publicationId: ObjectId!
+         $email: String!
+      ) {
+         subscribeToNewsletter(
+            input: { email: $email, publicationId: $publicationId }
+         ) {
+            status
+         }
+      }
+   `;
+
+   const response = await request(endPoint, mutation, {
+      publicationId,
+      email,
+   });
+
+   return response;
+}
 
 export { getAllPosts, getPosts };
