@@ -15,7 +15,7 @@ const PostSection = () => {
          </div>
          <div>
             {loading ? (
-               <div className="text-center"> Loading...</div>
+               <div className="text-center mt-3"> Loading...</div>
             ) : (
                blogs.slice(0, 2).map((post: any) => (
                   <Link to={`blogs/${post.node.slug}`} key={post.node.id}>

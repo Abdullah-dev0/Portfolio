@@ -39,10 +39,11 @@ const getPosts = async (slug: string) => {
 };
 
 const getAllPosts = async () => {
+   const number = 8;
    const query = gql`
       query GetUserArticles($publicationId: ObjectId!) {
          publication(id: $publicationId) {
-            posts(first: 7) {
+            posts(first: ${number}) {
                edges {
                   node {
                      id

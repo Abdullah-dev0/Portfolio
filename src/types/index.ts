@@ -9,3 +9,19 @@ export type Post = {
       url: string;
    };
 };
+
+export type Feature = {
+   id: string;
+   description: string;
+};
+
+export type Project = {
+   id: string;
+   slug: string;
+   description: string;
+   techStack: string[];
+   githubUrl: string;
+   liveLink: string;
+   img: string;
+   features: Feature[];
+};

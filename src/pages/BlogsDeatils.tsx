@@ -50,7 +50,7 @@ const BlogsDeatils = () => {
                   {blogs.title}
                </h1>
                <p className="text-md">{blogs.brief}</p>
-               <Link to={blogs.url} className="underline" target="_blank">
+               <Link to={blogs.url} target="_blank">
                   <Button className="text-lg">Read More</Button>
                </Link>
             </div>
