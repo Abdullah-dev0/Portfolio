@@ -6,9 +6,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
-import { subscribeToNewsletter } from "@/lib/requests";
 import { useState } from "react";
-import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 
@@ -18,26 +16,18 @@ type ModelProps = {
    description: string;
    title: string;
    type: "newslettter" | "underMaintenance";
-   handleSubmit?: () => void;
+   handleSubmit?: (email: string) => void;
 };
 
-const Model = ({ show, handle, description, title, type }: ModelProps) => {
+const Model = ({
+   show,
+   handle,
+   description,
+   title,
+   type,
+   handleSubmit,
+}: ModelProps) => {
    const [email, setEmail] = useState<string>("");
-
-   const handleSubmit = async () => {
-      try {
-         const res: any = await subscribeToNewsletter(email);
-         if (res) {
-            toast.success(
-               "please comfirm your email to subscribe to our newsletter"
-            );
-         }
-      } catch (error: any) {
-         if (error.response.errors[0].message === "Email already subscribed") {
-            toast.error("Email already subscribed");
-         }
-      }
-   };
 
    return (
       <Dialog open={show} onOpenChange={handle}>
@@ -66,7 +56,7 @@ const Model = ({ show, handle, description, title, type }: ModelProps) => {
                {type === "newslettter" ? (
                   <Button
                      type="button"
-                     onClick={handleSubmit}
+                     onClick={() => handleSubmit && handleSubmit(email)}
                      variant="secondary"
                      className="focus:outline-none focus:ring-0 focus-visible:ring-offset-0 border-primary focus-visible:ring-transparent focus:border-none  focus:border-transparent"
                   >
