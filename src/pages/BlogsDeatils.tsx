@@ -1,8 +1,10 @@
 import Loader from "@/components/shared/Loader";
 import { Button } from "@/components/ui/button";
-import { useGetPosts } from "@/Hooks/useResquests";
 import Layout from "@/Layout";
+import { getPosts } from "@/lib/requests";
 import { convertTimestampToReadableDate } from "@/lib/utils";
+import { Post } from "@/types";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 type Params = {
    slug: string;
@@ -11,7 +13,33 @@ type Params = {
 const BlogsDeatils = () => {
    const params = useParams();
    const { slug } = params as Params;
-   const { blogs, loading } = useGetPosts(slug);
+   const [loading, setLoading] = useState(true);
+   const [blogs, setBlogs] = useState<Post>({
+      id: "",
+      url: "",
+      title: "",
+      publishedAt: "",
+      updatedAt: "",
+      brief: "",
+      coverImage: {
+         url: "",
+      },
+   });
+
+   useEffect(() => {
+      const Posts = async () => {
+         try {
+            const res: any = await getPosts(slug);
+            setBlogs(res.publication.post);
+         } catch (error) {
+            console.log(error);
+         } finally {
+            setLoading(false);
+         }
+      };
+
+      Posts();
+   }, [slug]);
 
    return (
       <Layout>

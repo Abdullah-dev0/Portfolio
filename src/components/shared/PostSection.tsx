@@ -1,9 +1,27 @@
-import { useGetAllPosts } from "@/Hooks/useResquests";
+import { getAllPosts } from "@/lib/requests";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Posts from "./Posts";
 
 const PostSection = () => {
-   const { blogs, loading } = useGetAllPosts();
+   const [blogs, setBlogs] = useState([]);
+   const [loading, setLoading] = useState(true);
+
+   useEffect(() => {
+      const blogs = async () => {
+         try {
+            const response: any = await getAllPosts();
+
+            setBlogs(response.publication.posts.edges);
+         } catch (error) {
+            console.log(error);
+         } finally {
+            setLoading(false);
+         }
+      };
+
+      blogs();
+   }, []);
 
    return (
       <section className="w-full">
