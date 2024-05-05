@@ -30,7 +30,7 @@ const BlogsDeatils = () => {
                      Back to Projects
                   </Button>
                </Link>
-               <div className="mt-12 space-y-8">
+               <div className="mt-12 space-y-8 max-md:px-5">
                   <h1 className="max-sm:text-xl text-3xl font-bold mt-3">
                      {project.slug}
                   </h1>
@@ -76,7 +76,6 @@ const BlogsDeatils = () => {
                </div>
             </div>
          ))}
-         <div></div>
       </Layout>
    );
 };

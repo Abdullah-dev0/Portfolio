@@ -31,7 +31,7 @@ export const projects = [
       ],
       githubUrl: "https://github.com/Abdullah-dev0/JusTalk",
       liveLink: "https://jus-talk.vercel.app",
-      img: "/public/images/justalk.png",
+      img: "/images/justalk.png",
       features: [
          {
             id: "1",
@@ -95,7 +95,7 @@ export const projects = [
 
       githubUrl: "https://github.com/Abdullah-dev0/NowTalk",
       liveLink: "https://now-talk-omega.vercel.app",
-      img: "/public/images/nowtalk.png",
+      img: "/images/nowtalk.png",
       features: [
          {
             id: "1",
@@ -122,7 +122,7 @@ export const projects = [
       techStack: ["React", "Socket.io", "Node.js"],
       githubUrl: "https://github.com/Abdullah-dev0/Effortless-Events",
       liveLink: "https://effortless-events.vercel.app",
-      Img: "/public/images/event.png",
+      Img: "/images/event.png",
       features: [
          {
             id: "1",
