@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
-import { handleSubmit } from "@/lib/actions/actions";
+import { handleSubmit } from "@/lib/actions/HandleSubmit";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";

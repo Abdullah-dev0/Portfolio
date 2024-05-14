@@ -39,7 +39,7 @@ const getPosts = async (slug: string) => {
 };
 
 const getAllPosts = async () => {
-   const number = 8;
+   const number = 20;
    const query = gql`
       query GetUserArticles($publicationId: ObjectId!) {
          publication(id: $publicationId) {
@@ -85,3 +85,4 @@ export async function subscribeToNewsletter(email: string) {
 }
 
 export { getAllPosts, getPosts };
+
