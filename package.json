@@ -17,6 +17,7 @@
       "@vitejs/plugin-react": "^4.2.1",
       "class-variance-authority": "^0.7.0",
       "clsx": "^2.1.0",
+      "devicon": "^2.16.0",
       "graphql-request": "^6.1.0",
       "lucide-react": "^0.371.0",
       "next-themes": "^0.3.0",

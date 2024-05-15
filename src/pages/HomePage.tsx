@@ -3,6 +3,7 @@ import PostSection from "@/components/shared/PostSection";
 import ProjectSection from "@/components/shared/ProjectSection";
 
 import Model from "@/components/shared/Model";
+import Skills from "@/components/shared/Skills";
 import { useEffect, useState } from "react";
 import Layout from "../Layout";
 
@@ -42,9 +43,9 @@ const HomePage = () => {
          </div>
          <div className="mt-16 text-lg  flex flex-col justify-between items-center">
             <PostSection />
-            <div className="w-full">
-               <ProjectSection />
-            </div>
+            <Skills />
+
+            <ProjectSection />
          </div>
       </Layout>
    );

@@ -1,6 +1,7 @@
-import Footer from "@/components/shared/footer";
 import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
+// import "devicon.devicon.css";
 import React from "react";
 import "./index.css";
 

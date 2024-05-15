@@ -47,15 +47,14 @@ const Model = ({ show, handle, description, title, type }: ModelProps) => {
             </div>
             <DialogClose asChild className="mt-3">
                {type === "newslettter" ? (
-                  email && (
-                     <Button
-                        onClick={() => handleSubmit(email)}
-                        type="button"
-                        className="focus:outline-none focus:ring-0 focus-visible:ring-offset-0 border-primary focus-visible:ring-transparent focus:border-none  focus:border-transparent"
-                     >
-                        Subscribe
-                     </Button>
-                  )
+                  <Button
+                     onClick={() => handleSubmit(email)}
+                     type="button"
+                     disabled={!email}
+                     className="focus:outline-none focus:ring-0 focus-visible:ring-offset-0 border-primary focus-visible:ring-transparent focus:border-none  focus:border-transparent"
+                  >
+                     Subscribe
+                  </Button>
                ) : (
                   <Button
                      type="button"
