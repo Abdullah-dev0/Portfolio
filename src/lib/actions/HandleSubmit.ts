@@ -1,8 +1,7 @@
 import { toast } from "sonner";
-import { subscribeToNewsletter } from "../requests";
+import { subscribeToNewsletter } from "../gql";
 
 export const handleSubmit = async (email: string) => {
-
    if (!email || !/\S+@\S+\.\S+/.test(email)) {
       toast.error("Please enter a valid email");
       return;

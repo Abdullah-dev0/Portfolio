@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/requests";
+import { getAllPosts } from "@/lib/gql";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Posts from "./Posts";

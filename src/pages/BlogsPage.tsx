@@ -2,7 +2,7 @@ import Loader from "@/components/shared/Loader";
 import Model from "@/components/shared/Model";
 import Posts from "@/components/shared/Posts";
 import Layout from "@/Layout";
-import { getAllPosts } from "@/lib/requests";
+import { getAllPosts } from "@/lib/gql";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,6 @@ const BlogsPage = () => {
    const [blogs, setBlogs] = useState<[]>([]);
    const [loading, setLoading] = useState(true);
 
-   
    useEffect(() => {
       const blogs = async () => {
          try {

@@ -1,7 +1,7 @@
 import Loader from "@/components/shared/Loader";
 import { Button } from "@/components/ui/button";
 import Layout from "@/Layout";
-import { getPosts } from "@/lib/requests";
+import { getPosts } from "@/lib/gql";
 import { convertTimestampToReadableDate } from "@/lib/utils";
 import { Post } from "@/types";
 import { useEffect, useState } from "react";
@@ -41,19 +41,16 @@ const BlogsDeatils = () => {
       Posts();
    }, [slug]);
 
+   if (loading)
+      return (
+         <Layout>
+            <Loader />
+         </Layout>
+      );
+
    return (
       <Layout>
-         {loading && <Loader />}
-         <div
-            key={blogs?.id}
-            data-aos="zoom-in-up"
-            data-aos-offset="200"
-            data-aos-delay="100"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-         >
+         <div key={blogs?.id}>
             <Link to="/blogs">
                <Button variant={"outline"} className="text-lg">
                   Back to Blogs

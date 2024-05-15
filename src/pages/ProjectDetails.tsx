@@ -15,16 +15,7 @@ const BlogsDeatils = () => {
    return (
       <Layout>
          {filterProject.map((project) => (
-            <div
-               key={project.id}
-               data-aos="zoom-in-up"
-               data-aos-offset="200"
-               data-aos-delay="100"
-               data-aos-duration="800"
-               data-aos-easing="ease-in-out"
-               data-aos-mirror="true"
-               data-aos-once="false"
-            >
+            <div key={project.id}>
                <Link to="/projects">
                   <Button variant={"outline"} className="text-lg">
                      Back to Projects
@@ -43,7 +34,11 @@ const BlogsDeatils = () => {
                         Github link
                      </Link>
                      <div className="h-5 bg-slate-100 w-[2px] rotate-12"></div>
-                     <Link to={project.liveLink} target="_blank" className="underline">
+                     <Link
+                        to={project.liveLink}
+                        target="_blank"
+                        className="underline"
+                     >
                         Live link
                      </Link>
                   </div>
