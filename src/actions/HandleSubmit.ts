@@ -1,5 +1,5 @@
 import { toast } from "sonner";
-import { subscribeToNewsletter } from "../gql";
+import { subscribeToNewsletter } from "@/lib/gql";
 
 export const handleSubmit = async (email: string) => {
    if (!email || !/\S+@\S+\.\S+/.test(email)) {

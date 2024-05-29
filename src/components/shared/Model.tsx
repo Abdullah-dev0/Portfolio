@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
-import { handleSubmit } from "@/lib/actions/HandleSubmit";
+import { handleSubmit } from "@/actions/HandleSubmit";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
@@ -15,7 +15,7 @@ type ModelProps = {
    handle: () => void;
    description: string;
    title: string;
-   type: "newslettter" | "underMaintenance";
+   type: "newsletter" | "underMaintenance";
    handleSubmit?: () => void;
 };
 
@@ -28,7 +28,7 @@ const Model = ({ show, handle, description, title, type }: ModelProps) => {
             <DialogTitle className="text-2xl">{title}</DialogTitle>
             <div className="space-y-3">
                <p className="max-sm:text-base text-xl">{description}</p>
-               {type === "newslettter" && (
+               {type === "newsletter" && (
                   <form>
                      <Label htmlFor="email" className="text-lg">
                         Email
@@ -46,7 +46,7 @@ const Model = ({ show, handle, description, title, type }: ModelProps) => {
                )}
             </div>
             <DialogClose asChild className="mt-3">
-               {type === "newslettter" ? (
+               {type === "newsletter" ? (
                   <Button
                      onClick={() => handleSubmit(email)}
                      type="button"

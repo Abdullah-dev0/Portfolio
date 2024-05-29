@@ -38,12 +38,15 @@ const getPosts = async (slug: string) => {
    return respose;
 };
 
-const getAllPosts = async () => {
-   const number = 20;
+const getAllPosts = async (first = 5, after = null) => {
    const query = gql`
-      query GetUserArticles($publicationId: ObjectId!) {
+      query GetUserArticles(
+         $publicationId: ObjectId!
+         $first: Int!
+         $after: String
+      ) {
          publication(id: $publicationId) {
-            posts(first: ${number}) {
+            posts(first: $first, after: $after) {
                edges {
                   node {
                      id
@@ -51,13 +54,20 @@ const getAllPosts = async () => {
                      title
                      brief
                   }
+                  cursor
+               }
+               pageInfo {
+                  endCursor
+                  hasNextPage
                }
             }
          }
       }
    `;
 
-   const response = await request(endPoint, query, { publicationId });
+   const variables = { publicationId, first, after };
+
+   const response = await request(endPoint, query, variables);
 
    return response;
 };
@@ -85,4 +95,3 @@ export async function subscribeToNewsletter(email: string) {
 }
 
 export { getAllPosts, getPosts };
-
