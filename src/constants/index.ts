@@ -157,3 +157,70 @@ export const projects = [
       ],
    },
 ];
+
+export const skills = [
+   {
+      id: "1",
+      name: "React",
+      icon: "/icons/react.js.svg",
+   },
+   {
+      id: "2",
+      name: "Next.js",
+      icon: "/icons/next.js.svg",
+      className: "invert",
+   },
+   {
+      id: "3",
+      name: "typescript",
+      icon: "/icons/ts.svg",
+   },
+   {
+      id: "4",
+      name: "Tailwind CSS",
+      icon: "/icons/tailwindcss.svg",
+   },
+   {
+      id: "5",
+      name: "Node.js",
+      icon: "/icons/node-js.svg",
+   },
+   {
+      id: "6",
+      name: "MongoDB",
+      icon: "/icons/mongodb.svg",
+   },
+   {
+      id: "7",
+      name: "Git",
+      icon: "/icons/git.svg",
+   },
+   {
+      id: "8",
+      name: "Express",
+      icon: "/icons/express.svg",
+      className: "invert",
+
+   },
+   {
+      id: "9",
+      name: "javascript",
+      icon: "/icons/js.svg",
+   },
+   {
+      id: "10",
+      name: "Prisma",
+      icon: "/icons/prisma.svg",
+      className: "invert",
+   },
+   {
+      id: "11",
+      name: "Html",
+      icon: "/icons/html.svg",
+   },
+   {
+      id: "12",
+      name: "Css",
+      icon: "/icons/css.svg",
+   },
+];
