@@ -1,64 +1,29 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/Layout";
+import { socialLinks } from "@/constants";
+import { Link } from "react-router-dom";
 
 const ContactPage = () => {
    return (
       <Layout>
-         <section>
-            <div className="px-4 lg:p-0 text-base">
-               <form className="flex flex-col gap-5">
-                  <div>
-                     <label
-                        htmlFor="email"
-                        className="block mb-2  font-medium text-gray-900 dark:text-gray-300"
-                     >
-                        Your email
-                     </label>
-                     <Input
-                        type="email"
-                        name="email"
-                        className="dark:bg-gray-700"
-                        placeholder="yourname@.com"
-                        required
-                     />
-                  </div>
-                  <div>
-                     <label
-                        htmlFor="Name"
-                        className="block mb-2 font-medium text-gray-900 dark:text-gray-300"
-                     >
-                        Name
-                     </label>
-                     <Input
-                        type="text"
-                        id="Name"
-                        name="name"
-                        className="dark:bg-gray-700"
-                        placeholder="Let us know how we can help you"
-                        required
-                     />
-                  </div>
-                  <div className="sm:col-span-2">
-                     <label
-                        htmlFor="message"
-                        className="block mb-2  font-medium text-gray-900 dark:text-gray-300"
-                     >
-                        Your message
-                     </label>
-                     <Textarea
-                        id="message"
-                        name="message"
-                        rows={6}
-                        className="dark:bg-gray-700 "
-                        placeholder="Leave a comment..."
-                     ></Textarea>
-                  </div>
-                  <Button type="submit" className="sm:w-fit">
-                     Send message
-                  </Button>
-               </form>
+         <section className="flex justify-center items-center flex-col gap-7 ">
+            <h1 className="text-4xl max-sm:text-2xl">CONTACT</h1>
+            <p>Let's connect and build something cool together!</p>
+            <div className="flex gap-5 flex-wrap justify-center">
+               {socialLinks.map((link) => (
+                  <Link key={link.id} to={link.url}>
+                     <button className="z-0 group relative box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-unit-4 min-w-unit-20 text-small gap-unit-2 [&>svg]:max-w-[theme(spacing.unit-8)] data-[pressed=true]:scale-[0.97] transition-transform-colors-opacity motion-reduce:transition-none text-default-foreground data-[hover=true]:opacity-hover border backdrop-blur-2xl dark:bg-zinc-800/30 bg-zinc-900/85 border-neutral-800 rounded-xl flex justify-center items-center p-5">
+                        <span className="flex gap-4 justify-center items-center text-lg"> 
+                           <img
+                              src={link.icon}
+                              alt={link.name}
+                              className={`h-7 w-7 ${link.className}`}
+                           />
+
+                           {link.name}
+                        </span>
+                     </button>
+                  </Link>
+               ))}
             </div>
          </section>
       </Layout>

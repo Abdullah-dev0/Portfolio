@@ -234,3 +234,34 @@ export const skills = [
       className: "invert",
    },
 ];
+
+export const socialLinks = [
+   {
+      id: "1",
+      name: "Github",
+      url: "https://github.com/Abdullah-dev0",
+      icon: "/icons/github.svg",
+      className: "invert",
+   },
+   {
+      id: "2",
+      name: "Linkedin",
+      url: "https://www.linkedin.com/in/abdullah-devv",
+      icon: "/icons/linkedin.svg",
+   },
+   {
+      id: "3",
+      name: "Twitter",
+      url: "https://twitter.com/Abdul_ah14",
+      icon: "/icons/twitter.svg",
+      className: "invert",
+   },
+
+   {
+      id: "4",
+      name: "Dev.to",
+      url: "https://dev.to/abdullah-dev0",
+      icon: "/icons/dev.svg",
+      className: "invert",
+   },
+];
