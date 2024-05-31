@@ -29,7 +29,7 @@ const Model = ({ show, handle, description, title, type }: ModelProps) => {
             <div className="space-y-3">
                <p className="max-sm:text-base text-xl">{description}</p>
                {type === "newsletter" && (
-                  <form>
+                  <form onSubmit={(e) => e.preventDefault()}>
                      <Label htmlFor="email" className="text-lg">
                         Email
                      </Label>

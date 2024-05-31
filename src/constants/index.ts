@@ -161,66 +161,76 @@ export const projects = [
 export const skills = [
    {
       id: "1",
+      name: "Html",
+      icon: "/icons/html.svg",
+   },
+   {
+      id: "2",
+      name: "Css",
+      icon: "/icons/css.svg",
+   },
+   {
+      id: "3",
+      name: "Javascript",
+      icon: "/icons/js.svg",
+   },
+   {
+      id: "4",
+      name: "Typescript",
+      icon: "/icons/ts.svg",
+   },
+   {
+      id: "5",
+      name: "Tailwind CSS",
+      icon: "/icons/tailwindcss.svg",
+   },
+   {
+      id: "6",
       name: "React",
       icon: "/icons/react.js.svg",
    },
    {
-      id: "2",
+      id: "7",
       name: "Next.js",
       icon: "/icons/next.js.svg",
       className: "invert",
    },
    {
-      id: "3",
-      name: "typescript",
-      icon: "/icons/ts.svg",
-   },
-   {
-      id: "4",
-      name: "Tailwind CSS",
-      icon: "/icons/tailwindcss.svg",
-   },
-   {
-      id: "5",
+      id: "8",
       name: "Node.js",
       icon: "/icons/node-js.svg",
    },
    {
-      id: "6",
+      id: "9",
       name: "MongoDB",
       icon: "/icons/mongodb.svg",
    },
    {
-      id: "7",
+      id: "10",
       name: "Git",
       icon: "/icons/git.svg",
    },
    {
-      id: "8",
+      id: "11",
       name: "Express",
       icon: "/icons/express.svg",
       className: "invert",
-
    },
    {
-      id: "9",
-      name: "javascript",
-      icon: "/icons/js.svg",
+      id: "12",
+      name: "Figma",
+      icon: "/icons/figma.svg",
    },
    {
-      id: "10",
+      id: "13",
       name: "Prisma",
       icon: "/icons/prisma.svg",
       className: "invert",
    },
    {
-      id: "11",
-      name: "Html",
-      icon: "/icons/html.svg",
-   },
-   {
-      id: "12",
-      name: "Css",
-      icon: "/icons/css.svg",
+      id: "14",
+      name: "Github",
+      icon: "/icons/github.svg",
+      className: "invert",
    },
 ];
