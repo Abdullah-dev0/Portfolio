@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "./components/shared/theme-provider.tsx";
 import "./index.css";
-import BlogsDeatils from "./pages/BlogsDeatils.tsx";
+import BlogsDeatils from "./pages/BlogsDetails.tsx";
 import BlogsPage from "./pages/BlogsPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";

@@ -10,7 +10,7 @@ type Params = {
    slug: string;
 };
 
-const BlogsDeatils = () => {
+const BlogsDetails = () => {
    const params = useParams();
    const { slug } = params as Params;
    const [loading, setLoading] = useState(true);
@@ -84,4 +84,4 @@ const BlogsDeatils = () => {
    );
 };
 
-export default BlogsDeatils;
+export default BlogsDetails;

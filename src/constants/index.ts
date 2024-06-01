@@ -119,10 +119,10 @@ export const projects = [
       slug: "Effortless-Events",
       description:
          "Build an event organization web app like Eventbrite or Meetup with authentication, event management, search, filtering, categories, checkout, and payments using Next JS 14, Tailwind CSS, Shadcn, React Hook Form, Zod, Uploadthing, React-Datepicker, Mongoose, Clerk, and Stripe.",
-      techStack: ["React", "Socket.io", "Node.js"],
+      techStack: ["React", "Next.js", "Node.js","shad cn", "Tailwind CSS", "MongoDB", "Clerk", "Stripe","typescript"],
       githubUrl: "https://github.com/Abdullah-dev0/Effortless-Events",
       liveLink: "https://effortless-events.vercel.app",
-      Img: "/images/event.png",
+      img: "/images/event.png",
       features: [
          {
             id: "1",
