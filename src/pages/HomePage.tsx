@@ -44,7 +44,6 @@ const HomePage = () => {
          <div className="mt-16 text-lg  flex flex-col justify-between items-center">
             <PostSection />
             <Skills />
-
             <ProjectSection />
          </div>
       </Layout>
