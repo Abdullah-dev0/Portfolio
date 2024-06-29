@@ -8,7 +8,7 @@ const PostSection = () => {
     <section className="w-full mt-12">
       <div className="flex items-center text-[18px] max-sm:text-[16px] gap-2  justify-between flex-wrap">
         <h1 className="">Latest Projects</h1>
-        <Link to="/projects" className="underline">
+        <Link to="/projects">
           <Button variant={"secondary"}>See All Project</Button>
         </Link>
       </div>

@@ -28,7 +28,7 @@ const PostSection = () => {
     <section className="w-full">
       <div className="flex items-center  text-[18px] max-sm:text-[16px] gap-2 justify-between flex-wrap">
         <h1 className="">Latest Posts</h1>
-        <Link to="/blogs" className="underline">
+        <Link to="/blogs">
           <Button variant={"secondary"}>View All</Button>
         </Link>
       </div>
