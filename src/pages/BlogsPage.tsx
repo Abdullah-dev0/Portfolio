@@ -14,6 +14,7 @@ const BlogsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [endCursor, setEndCursor] = useState<any>("");
   const [hasNextPage, setHasNextPage] = useState<boolean>(false);
+  const [cursors, setCursors] = useState<any[]>([""]);
 
   const fetchBlogs = async (after = null) => {
     setLoading(true);
@@ -23,6 +24,9 @@ const BlogsPage = () => {
       setBlogs(edges);
       setEndCursor(pageInfo.endCursor);
       setHasNextPage(pageInfo.hasNextPage);
+      if (after && !cursors.includes(after)) {
+        setCursors([...cursors, after]);
+      }
     } catch (error) {
       console.log(error);
     } finally {
@@ -34,15 +38,14 @@ const BlogsPage = () => {
     fetchBlogs();
   }, []);
 
-  const handleNextPage = () => {
-    fetchBlogs(endCursor);
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
-
-  const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      fetchBlogs();
-      setCurrentPage(1);
+  const handlePage = (page: string) => {
+    if (page === "next") {
+      fetchBlogs(endCursor);
+      setCurrentPage((prevPage) => prevPage + 1);
+    } else if (page === "pre" && currentPage > 1) {
+      const previousCursor = cursors[currentPage - 2];
+      fetchBlogs(previousCursor);
+      setCurrentPage((prevPage) => prevPage - 1);
     }
   };
 
@@ -60,7 +63,6 @@ const BlogsPage = () => {
       }, 2000);
     }
   }, []);
-
   return (
     <Layout>
       <Model
@@ -85,17 +87,15 @@ const BlogsPage = () => {
         </div>
       )}
       <div className="flex justify-between mt-6">
-        <Button disabled={currentPage === 1} onClick={handlePreviousPage}>
+        <Button disabled={currentPage === 1} onClick={() => handlePage("pre")}>
           Previous
         </Button>
         <Button
           className={`
                ${!hasNextPage ? "cursor-not-allowed" : "cursor-pointer"}
-              
-               
             `}
           disabled={!hasNextPage}
-          onClick={handleNextPage}>
+          onClick={() => handlePage("next")}>
           Next
         </Button>
       </div>
