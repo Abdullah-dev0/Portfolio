@@ -233,6 +233,29 @@ export const skills = [
       icon: "/icons/github.svg",
       className: "invert",
    },
+   {
+      id: "15",
+      name: "Docker",
+      icon: "/icons/docker.svg",
+   },
+   {
+      id: "16",
+      name: "kubernetes",
+      icon: "/icons/kubernetes.svg",
+   },
+  
+   {
+      id: "17",
+      name: "Redis",
+      icon: "/icons/redis.svg",
+   },
+   {
+      id: "18",
+      name: "Aws",
+      icon: "/icons/aws.svg",
+      className: "invert",
+   },
+ 
 ];
 
 export const socialLinks = [

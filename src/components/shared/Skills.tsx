@@ -7,7 +7,7 @@ const Skills = () => {
     <div className="mt-12">
       <h1 className="uppercase text-center font-medium max-sm:text-xl text-4xl">My Skills</h1>
       <TooltipProvider delayDuration={100}>
-        <div className="flex gap-7 flex-wrap mt-8 justify-center items-center">
+        <div className="flex gap-7 flex-wrap mt-8 justify-start max-sm:justify-center items-center">
           {skills.map((skill) => (
             <Tooltip key={skill.id}>
               <TooltipTrigger asChild>
