@@ -2,10 +2,10 @@ import { Building2, GraduationCapIcon, MapPin } from "lucide-react";
 
 const AboutMe = () => {
 	return (
-		<div className="space-y-9">
+		<div className="">
 			<h2 className="text-4xl max-sm:text-3xl">About Me</h2>
 
-			<p className="text-lg font-semibold text-white">
+			<p className="text-lg mt-9 font-semibold ">
 				I'm a <span className="text-red-600 px-1">Full Stack Developer</span> based in
 				<span className="text-red-600 px-1">Pakistan</span>. I have a passion for
 				<span className="text-red-600 px-1">web development</span> and love to create interactive and responsive
@@ -22,9 +22,9 @@ const AboutMe = () => {
 					<span className="text-red-600 px-1">career growth</span>.
 				</span>
 			</p>
-			<h1 className="text-4xl max-sm:text-3xl">Work Experience</h1>
+			<h1 className="text-4xl max-sm:text-3xl mt-9">Work Experience</h1>
 
-			<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4">
+			<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
 				<div className="space-y-2">
 					<h2 className="text-xl sm:text-2xl font-semibold">Intern - Full Stack Developer</h2>
 					<div className="flex flex-col sm:flex-row gap-2 text-sm">
@@ -43,9 +43,9 @@ const AboutMe = () => {
 					<p className="text-sm">Sep 2022 - Mar 2023</p>
 				</div>
 			</div>
-			<h1 className="text-4xl max-sm:text-3xl">Education</h1>
+			<h1 className="text-4xl max-sm:text-3xl mt-9">Education</h1>
 
-			<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4">
+			<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
 				<div className="space-y-2">
 					<h2 className="text-xl  font-semibold">Bachelor of Science in Imformation Tecnology</h2>
 					<div className="flex flex-col sm:flex-row gap-2 text-sm">

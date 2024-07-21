@@ -17,7 +17,7 @@ const Layout = (props: React.PropsWithChildren<Record<string, unknown>>) => {
 	return (
 		<>
 			<Navbar />
-			<main className="max-w-screen-sm mx-auto mt-32 lg:p-0 px-5 min-h-[60vh]">
+			<main className="max-w-screen-sm mx-auto mt-32 max-sm:mt-40 lg:p-0 px-5 min-h-[60vh]">
 				{props.children}
 				<Toaster position="top-center" richColors />
 			</main>
