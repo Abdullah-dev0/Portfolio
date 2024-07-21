@@ -1,13 +1,10 @@
 import PostSection from "@/components/shared/PostSection";
-
 import ProjectSection from "@/components/shared/ProjectSection";
-
 import Skills from "@/components/shared/Skills";
-import Layout from "../Layout";
 
 const HomePage = () => {
 	return (
-		<Layout>
+		<>
 			<div className="flex gap-8 flex-col w-full">
 				<h2 className="text-lg">Hi, I'm Abdullah 👋🏻</h2>
 				<p className="sm:text-lg">
@@ -20,7 +17,7 @@ const HomePage = () => {
 				<Skills />
 				<ProjectSection />
 			</div>
-		</Layout>
+		</>
 	);
 };
 
