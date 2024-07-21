@@ -7,7 +7,7 @@ const ProjectsPage = () => {
 		<>
 			<h1 className="text-4xl font-bold">Projects</h1>
 			<div className="flex flex-col mt-8">
-				{projects.map((project) => (
+				{projects.reverse().map((project) => (
 					<Link key={project.id} to={`${project.slug}`}>
 						<Posts key={project.id} slug={project.slug} description={project.description} />
 					</Link>

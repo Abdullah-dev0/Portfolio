@@ -9,6 +9,7 @@ import ErrorPage from "./pages/ErrorPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import ProjectDetails from "./pages/ProjectDetails.tsx";
 import ProjectsPage from "./pages/ProjectsPage.tsx";
+import AboutMe from "./pages/AboutMe.tsx";
 
 const App = () => {
 	return (
@@ -22,6 +23,7 @@ const App = () => {
 						<Route path="/projects" element={<ProjectsPage />} />
 						<Route path="/projects/:slug" element={<ProjectDetails />} />
 						<Route path="/contact" element={<ContactPage />} />
+						<Route path="/about" element={<AboutMe />} />
 						<Route path="*" element={<ErrorPage />} />
 					</Routes>
 				</Layout>

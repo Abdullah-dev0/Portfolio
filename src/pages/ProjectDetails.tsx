@@ -27,12 +27,14 @@ const BlogsDeatils = () => {
 								<Button>Github link</Button>
 							</Link>
 
-							<Link to={project.liveLink} target="_blank" className="underline">
-								<Button>Live link</Button>
-							</Link>
+							{project.liveLink && (
+								<Link to={project.liveLink} target="_blank" className="underline">
+									<Button>Live link</Button>
+								</Link>
+							)}
 						</div>
 
-						<img src={project.img} className="w-full h-full" alt="Img" />
+						{project.img && <img src={project.img} className="w-full h-full" alt="Img" />}
 
 						<p className="mt-3 text-lg capitalize">{project.description}</p>
 						<div className="space-y-4">
