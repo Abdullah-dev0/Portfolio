@@ -1,6 +1,5 @@
 import Loader from "@/components/shared/Loader";
 import { Button } from "@/components/ui/button";
-import Layout from "@/Layout";
 import { getPosts } from "@/lib/gql";
 import { convertTimestampToReadableDate } from "@/lib/utils";
 import { Post } from "@/types";
@@ -41,12 +40,7 @@ const BlogsDetails = () => {
 		Posts();
 	}, [slug]);
 
-	if (loading)
-		return (
-			<Layout>
-				<Loader />
-			</Layout>
-		);
+	if (loading) return <Loader />;
 
 	return (
 		<>
