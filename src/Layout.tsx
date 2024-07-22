@@ -1,19 +1,10 @@
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
-import React, { useEffect } from "react";
+import React from "react";
 import "./index.css";
-import { useLocation } from "react-router-dom";
-import initializeGA from "./lib/analytics";
-import ReactGA from "react-ga4";
 
 const Layout = (props: React.PropsWithChildren<Record<string, unknown>>) => {
-	const location = useLocation();
-
-	useEffect(() => {
-		initializeGA();
-		ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
-	}, [location]);
 	return (
 		<>
 			<Navbar />
