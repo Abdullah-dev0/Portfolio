@@ -15,8 +15,8 @@ const App = () => {
 	return (
 		<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
 			<Router>
-				<Layout>
-					<Routes>
+				<Routes>
+					<Route element={<Layout />}>
 						<Route path="/" element={<HomePage />} />
 						<Route path="/blogs" element={<BlogsPage />} />
 						<Route path="/blogs/:slug" element={<BlogsDetails />} />
@@ -25,8 +25,8 @@ const App = () => {
 						<Route path="/contact" element={<ContactPage />} />
 						<Route path="/about" element={<AboutMe />} />
 						<Route path="*" element={<ErrorPage />} />
-					</Routes>
-				</Layout>
+					</Route>
+				</Routes>
 			</Router>
 		</ThemeProvider>
 	);
