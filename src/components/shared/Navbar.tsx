@@ -16,7 +16,7 @@ const Navbar = () => {
 								<NavLink
 									to={link.path}
 									className={({ isActive }) =>
-										`${isActive ? "opacity-65 animate-pulse transition-all" : ""} underline hover:opacity-70 `
+										`${isActive ? "opacity-65 animate-pulse transition-all" : null} underline hover:opacity-70 `
 									}>
 									{link.name}
 								</NavLink>

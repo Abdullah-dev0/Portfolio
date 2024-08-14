@@ -40,7 +40,7 @@ const AboutMe = () => {
 				</div>
 				<div className="space-y-2 text-right sm:text-left">
 					<p className="bg-green-500 text-sm text-white py-1 px-3 rounded-xl w-fit sm:ml-auto">Internship</p>
-					<p className="text-sm">Sep 2022 - Mar 2023</p>
+					<p className="text-sm">Dec 2022 - Mar 2023</p>
 				</div>
 			</div>
 			<h1 className="text-4xl max-sm:text-3xl mt-9">Education</h1>
