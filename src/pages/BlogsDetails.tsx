@@ -56,10 +56,6 @@ const BlogsDetails = () => {
 							<span>Published At : </span>
 							{convertTimestampToReadableDate(blogs.publishedAt)}
 						</p>
-						<p>
-							<span>Updated At : </span>
-							{convertTimestampToReadableDate(blogs.updatedAt)}
-						</p>
 					</div>
 
 					<div className="w-full">
