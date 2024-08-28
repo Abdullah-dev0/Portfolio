@@ -205,6 +205,42 @@ export const projects = [
 			},
 		],
 	},
+	{
+		id: "5",
+		slug: "CodeCanvas",
+		description:
+			"CodeCanvas is a dynamic platform designed to showcase websites along with their descriptions. It aims to foster a vibrant community where users can discover, interact, and engage with various web projects.",
+		techStack: ["Next.js", "Tailwind CSS", "TypeScript", "shad cn", "React-Hook-Form", "Zod", "uploadthing"],
+		githubUrl: "https://github.com/Abdullah-dev0/CodeCanvas",
+		liveLink: "https://code-canvas-orpin.vercel.app",
+		img: "/images/codecanvas.png",
+		features: [
+			{
+				id: "1",
+				description:
+					"Efficiently manage user authentication and authorization through Clerk, ensuring secure access to the platform.",
+			},
+			{
+				id: "2",
+				description:
+					"Create, read, update, and delete projects, allowing users to showcase their work and engage with the community.",
+			},
+			{
+				id: "3",
+				description: "AI Integration: Generate prompts and descriptions using AI to enhance user experience.",
+			},
+			{
+				id: "4",
+				description:
+					"Dynamic categorization allows for the seamless addition of new project categories, keeping your platform adaptable and engaging.",
+			},
+			{
+				id: "5",
+				description:
+					"Access a detailed view of each project, including descriptions, images, and related information, to provide users with a comprehensive understanding of the project.",
+			},
+		],
+	},
 ];
 
 export const skills = [
