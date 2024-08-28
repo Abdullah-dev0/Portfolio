@@ -34,7 +34,7 @@ const BlogsDeatils = () => {
 							)}
 						</div>
 
-						{project.img && <img src={project.img} className="w-full h-full" alt="Img" />}
+						{project.img && <img src={project.img} className="w-full h-full" loading="lazy" alt="Img" />}
 
 						<p className="mt-3 text-lg capitalize">{project.description}</p>
 						<div className="space-y-4">
