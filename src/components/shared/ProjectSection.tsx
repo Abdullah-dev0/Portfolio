@@ -13,11 +13,14 @@ const PostSection = () => {
 				</Link>
 			</div>
 			<div>
-				{projects.slice(-2).map((project) => (
-					<Link to={`projects/${project.slug}`} key={project.id}>
-						<Posts key={project.id} slug={project.slug} description={project.description} />
-					</Link>
-				))}
+				{projects
+					.slice(-2)
+					.reverse()
+					.map((project) => (
+						<Link to={`projects/${project.slug}`} key={project.id}>
+							<Posts key={project.id} slug={project.slug} description={project.description} />
+						</Link>
+					))}
 			</div>
 		</section>
 	);
