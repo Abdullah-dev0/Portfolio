@@ -23,12 +23,12 @@ const BlogsDeatils = () => {
 					<div className="mt-12 space-y-8 max-md:px-5">
 						<h1 className="max-sm:text-xl text-3xl font-bold mt-3">{project.slug}</h1>
 						<div className="flex gap-4 max-sm:flex-col  sm:items-center text-xl">
-							<Link to={project.githubUrl} target="_blank" className="underline">
+							<Link to={project.githubUrl} target="_blank">
 								<Button>Github link</Button>
 							</Link>
 
 							{project.liveLink && (
-								<Link to={project.liveLink} target="_blank" className="underline">
+								<Link to={project.liveLink} target="_blank">
 									<Button>Live link</Button>
 								</Link>
 							)}
