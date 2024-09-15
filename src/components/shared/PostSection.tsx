@@ -1,29 +1,31 @@
-import { getAllPosts } from "@/lib/gql";
+import useSWR from "swr";
 import { LoaderCircleIcon } from "lucide-react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import Posts from "./Posts";
+import { getAllPosts } from "@/lib/gql";
+
+// Fetcher function for SWR
+const fetcher = async () => {
+	const response: any = await getAllPosts();
+	return response.publication.posts.edges;
+};
 
 const PostSection = () => {
-	const [blogs, setBlogs] = useState([]);
-	const [loading, setLoading] = useState(true);
+	// Use SWR for fetching and caching posts
+	const {
+		data: blogs,
+		error,
+		isLoading,
+	} = useSWR("posts", fetcher, {
+		revalidateOnFocus: false,
+		revalidateIfStale: false,
+	});
 
-	useEffect(() => {
-		const blogs = async () => {
-			try {
-				const response: any = await getAllPosts();
-
-				setBlogs(response.publication.posts.edges);
-			} catch (error) {
-				console.log(error);
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		blogs();
-	}, []);
+	if (error) {
+		console.log(error);
+		return <div>Error loading posts</div>;
+	}
 
 	return (
 		<section className="w-full">
@@ -34,7 +36,7 @@ const PostSection = () => {
 				</Link>
 			</div>
 			<div>
-				{loading ? (
+				{isLoading ? (
 					<div className="flex justify-center h-[25vh] items-center">
 						<LoaderCircleIcon className="animate-spin" />
 					</div>
