@@ -7,7 +7,7 @@ import useSWR from "swr";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const fetcher = async (p0: string, limit: number, after = null) => {
+const fetcher = async (limit: number, after = null) => {
 	const response: any = await getAllPosts(limit, after);
 	return response.publication.posts;
 };
@@ -22,7 +22,7 @@ const BlogsPage = () => {
 	// SWR hook to fetch blogs based on current endCursor
 	const { data, error, isLoading } = useSWR(
 		["posts", limit, cursors[currentPage - 1]],
-		([, limit, after]) => fetcher("posts", limit, after),
+		([, limit, after]) => fetcher(limit, after),
 		{ revalidateOnFocus: false, revalidateIfStale: false },
 	);
 
