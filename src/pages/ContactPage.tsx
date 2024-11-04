@@ -59,10 +59,10 @@ const ContactPage = () => {
 	};
 
 	return (
-		<section className="space-y-4 w-full max-w-screen-lg mx-auto px-8 lg:px-0">
+		<section className="space-y-6 w-full  mx-auto px-8 lg:px-0">
 			<p className="text-center text-2xl">Let's connect and build something cool together!</p>
-			<div className="grid lg:grid-cols-2 justify-center jus items-center gap-6 max-sm:gap-y-12 grid-cols-1 ">
-				<div className="">
+			<div className="flex flex-col-reverse justify-center items-center  gap-6 max-sm:gap-y-12">
+				<div className="w-full">
 					<form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 						<div>
 							<Label htmlFor="name">Name</Label>
@@ -87,7 +87,7 @@ const ContactPage = () => {
 						</Button>
 					</form>
 				</div>
-				<div className="flex gap-5 flex-wrap justify-center max-w-[22rem] mx-auto">
+				<div className="flex gap-5 flex-wrap justify-center mx-auto">
 					{socialLinks.map((link) => (
 						<Link key={link.id} to={link.url} target="_blank">
 							<button className="z-0 group relative box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-unit-4 min-w-unit-20 text-small gap-unit-2 [&>svg]:max-w-[theme(spacing.unit-8)] data-[pressed=true]:scale-[0.97] transition-transform-colors-opacity motion-reduce:transition-none  data-[hover=true]:opacity-hover border backdrop-blur-2xl dark:bg-zinc-800/30 bg-zinc-900/85 text-white border-neutral-800  rounded-xl flex justify-center items-center p-5">

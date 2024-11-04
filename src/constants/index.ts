@@ -207,37 +207,55 @@ export const projects = [
 	},
 	{
 		id: "5",
-		slug: "CodeCanvas",
+		slug: "TextTalk",
 		description:
-			"CodeCanvas is a dynamic platform designed to showcase websites along with their descriptions. It aims to foster a vibrant community where users can discover, interact, and engage with various web projects.",
-		techStack: ["Next.js", "Tailwind CSS", "TypeScript", "shad cn", "React-Hook-Form", "Zod", "uploadthing"],
-		githubUrl: "https://github.com/Abdullah-dev0/CodeCanvas",
-		liveLink: "https://code-canvas-orpin.vercel.app",
-		img: "/images/codecanvas.png",
+			"TextTalk is a cutting-edge AI-powered web application that lets users interact with PDF documents using natural language. Built with LangChain, it enables users to ask questions, summarize content, paraphrase, and retrieve related PDFs from the internet. TextTalk supports multiple languages and integrates various large language models (LLMs) to provide a versatile, dynamic experience for users seeking enhanced document interaction.",
+		techStack: [
+			"Next.js",
+			"Prisma ORM",
+			"TypeScript",
+			"shad cn",
+			"Clerk",
+			"LangChain.js",
+			"Gemini LLM",
+			"SupabaseVectorStore ",
+			"uploadthing",
+		],
+		githubUrl: "https://github.com/Abdullah-dev0/TextTalk",
+		liveLink: "https://texttalk.techonline.live",
+		img: "/images/Texttalk.jpg",
 		features: [
 			{
 				id: "1",
-				description:
-					"Efficiently manage user authentication and authorization through Clerk, ensuring secure access to the platform.",
+				description: "💬 AI-powered PDF interaction with natural language processing (NLP)",
 			},
 			{
 				id: "2",
-				description:
-					"Create, read, update, and delete projects, allowing users to showcase their work and engage with the community.",
+				description: "🌐 Fetches related PDFs from the internet for enhanced context",
 			},
 			{
 				id: "3",
-				description: "AI Integration: Generate prompts and descriptions using AI to enhance user experience.",
+				description: "🌍 Supports multiple languages for global accessibility",
 			},
 			{
 				id: "4",
-				description:
-					"Dynamic categorization allows for the seamless addition of new project categories, keeping your platform adaptable and engaging.",
+				description: "🧠 Integrates multiple large language models (LLMs) for diverse responses",
 			},
 			{
 				id: "5",
-				description:
-					"Access a detailed view of each project, including descriptions, images, and related information, to provide users with a comprehensive understanding of the project.",
+				description: "🔄 Paraphrasing and summarization capabilities for quick insights",
+			},
+			{
+				id: "6",
+				description: "🔒 User authentication powered by Clerk",
+			},
+			{
+				id: "7",
+				description: "💽 MongoDB for user data storage",
+			},
+			{
+				id: "8",
+				description: "📊 Vector management with SupabaseVectorStore and Pinecone embeddings",
 			},
 		],
 	},
