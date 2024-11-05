@@ -377,7 +377,7 @@ export const socialLinks = [
 	{
 		id: "3",
 		name: "Twitter",
-		url: "https://twitter.com/Abdul_ah14",
+		url: "https://x.com/Abdu_lah14",
 		icon: "/icons/twitter.svg",
 		className: "invert",
 	},
