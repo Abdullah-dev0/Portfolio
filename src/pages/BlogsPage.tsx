@@ -1,105 +1,87 @@
 import Loader from "@/components/shared/Loader";
-import Model from "@/components/shared/Model";
 import Posts from "@/components/shared/Posts";
-import { Button } from "@/components/ui/button";
-import { getAllPosts } from "@/lib/gql";
+import { contextBlogPost, useBlog } from "@/context/blog";
+import { getAllPosts } from "@/lib/api";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useSWR from "swr";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
-const fetcher = async (limit: number, after = null) => {
-	const response: any = await getAllPosts(limit, after);
-	return response.publication.posts;
-};
+interface BlogPost {
+	id: number;
+	title: string;
+	description: string;
+	slug: string;
+	url?: string;
+	cover_image?: string;
+}
 
 const BlogsPage = () => {
-	const [show, setShow] = useState<boolean>(false);
-	const [currentPage, setCurrentPage] = useState(1);
-	const [cursors, setCursors] = useState<any[]>([""]);
+	const { setBlogs } = useBlog();
+	const navigate = useNavigate();
+	const location = useLocation();
+	const queryParams = new URLSearchParams(location.search);
+	const pageFromUrl = parseInt(queryParams.get("page") || "1");
 
-	const limit = 5;
+	const [currentPage, setCurrentPage] = useState(pageFromUrl);
+	const postsPerPage = 3;
 
-	// SWR hook to fetch blogs based on current endCursor
-	const { data, error, isLoading } = useSWR(
-		["posts", limit, cursors[currentPage - 1]],
-		([, limit, after]) => fetcher(limit, after),
-		{ revalidateOnFocus: false, revalidateIfStale: false },
+	const { data, error, isLoading } = useSWR<BlogPost[]>(
+		[`posts-${currentPage}`, currentPage, postsPerPage],
+		() => getAllPosts(currentPage, postsPerPage),
+		{
+			revalidateOnFocus: false,
+			revalidateIfStale: false,
+		},
 	);
 
-	// Extract relevant data from the SWR response
-	const blogs = data?.edges || [];
-	const endCursor = data?.pageInfo?.endCursor;
-	const hasNextPage = data?.pageInfo?.hasNextPage;
+	useEffect(() => {
+		setBlogs(data as contextBlogPost[]);
+	}, [data]);
 
-	// Handle page navigation
-	const handlePage = (page: string) => {
-		if (page === "next" && hasNextPage) {
-			setCurrentPage((prevPage) => prevPage + 1);
-			if (!cursors.includes(endCursor)) {
-				setCursors([...cursors, endCursor]);
-			}
-		} else if (page === "pre" && currentPage > 1) {
-			setCurrentPage((prevPage) => prevPage - 1);
-		}
+	const handlePageChange = (newPage: number) => {
+		setCurrentPage(newPage);
+		navigate(`/blogs?page=${newPage}`, { replace: true });
 	};
 
 	useEffect(() => {
-		const hasVisitedBefore = localStorage.getItem("email");
+		setCurrentPage(pageFromUrl);
+	}, [pageFromUrl]);
 
-		window.onbeforeunload = () => {
-			localStorage.removeItem("email");
-		};
-
-		if (!hasVisitedBefore) {
-			setTimeout(() => {
-				setShow(true);
-				localStorage.setItem("email", "true");
-			}, 2000);
-		}
-	}, []);
+	if (isLoading) return <Loader />;
+	if (error) return <div>Error loading posts</div>;
+	if (!data) return <div>No posts found</div>;
 
 	return (
-		<>
-			<Model
-				title="Subscribe to our newsletter"
-				type="newsletter"
-				show={show}
-				handle={() => {
-					setShow(false);
-				}}
-				description="Get the latest news and updates on our products"
-			/>
-			<h1 className="text-4xl font-bold">Blogs</h1>
-			{isLoading ? (
-				<Loader />
-			) : error ? (
-				<div>Error loading posts</div>
-			) : (
-				<div className="flex flex-col mt-8">
-					{blogs.map((blog: any) => (
-						<Link key={blog.node?.id} to={`${blog.node?.slug}`}>
-							<Posts key={blog.node?.id} slug={blog.node.title} description={blog.node.brief} />
-						</Link>
-					))}
-				</div>
-			)}
-			<div className="flex justify-between mt-6">
-				<Button disabled={currentPage === 1} onClick={() => handlePage("pre")}>
-					Previous
-				</Button>
-				<Button
-					className={`${!hasNextPage ? "cursor-not-allowed" : "cursor-pointer"}`}
-					disabled={!hasNextPage}
-					onClick={() => handlePage("next")}>
-					Next
-				</Button>
-			</div>
-			{!hasNextPage && (
+		<div className="container mx-auto px-4 py-8">
+			{data.map((blog: BlogPost) => (
+				<Link
+					key={blog.id}
+					to={`/blogs/${blog.slug}?fromPage=${currentPage}`}
+					className="transition-transform hover:scale-105">
+					<Posts key={blog.id} slug={blog.slug} description={blog.description} />
+				</Link>
+			))}
+			{data.length < postsPerPage && (
 				<p className="text-center mt-10 text-gray-500">
-					🎉 You've reached the end! No more blogs to show for now. Stay tuned for more amazing content! 🚀
+					🎉 You've reached the end! No more blogs to show for now. Stay tuned for more amazing Blogs! 🚀
 				</p>
 			)}
-		</>
+
+			<div className="flex justify-between items-center mx-5 mt-8">
+				<button
+					onClick={() => handlePageChange(currentPage - 1)}
+					disabled={currentPage === 1}
+					className="px-4 py-2 rounded bg-primary text-white disabled:opacity-50 hover:bg-primary/90">
+					Previous
+				</button>
+				<button
+					onClick={() => handlePageChange(currentPage + 1)}
+					disabled={data.length < postsPerPage}
+					className="px-4 py-2 rounded bg-primary text-white disabled:opacity-50 hover:bg-primary/90">
+					Next
+				</button>
+			</div>
+		</div>
 	);
 };
 

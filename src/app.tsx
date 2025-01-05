@@ -10,6 +10,7 @@ import ErrorPage from "./pages/ErrorPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import ProjectDetails from "./pages/ProjectDetails.tsx";
 import ProjectsPage from "./pages/ProjectsPage.tsx";
+import { BlogProvider } from "./context/blog.tsx";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -29,7 +30,9 @@ const router = createBrowserRouter(
 const App = () => {
 	return (
 		<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-			<RouterProvider router={router} />
+			<BlogProvider>
+				<RouterProvider router={router} />
+			</BlogProvider>
 		</ThemeProvider>
 	);
 };

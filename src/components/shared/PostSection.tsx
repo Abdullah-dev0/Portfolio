@@ -1,31 +1,33 @@
-import useSWR from "swr";
+import { getAllPosts } from "@/lib/api";
 import { LoaderCircleIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import useSWR from "swr";
 import { Button } from "../ui/button";
+import Loader from "./Loader";
 import Posts from "./Posts";
-import { getAllPosts } from "@/lib/gql";
+import { contextBlogPost, useBlog } from "@/context/blog";
 
 // Fetcher function for SWR
-const fetcher = async () => {
-	const response: any = await getAllPosts();
-	return response.publication.posts.edges;
-};
 
-const PostSection = () => {
+const BlogSection = () => {
 	// Use SWR for fetching and caching posts
-	const {
-		data: blogs,
-		error,
-		isLoading,
-	} = useSWR("posts", fetcher, {
+	const { setBlogs } = useBlog();
+	const { data, error, isLoading } = useSWR("posts", getAllPosts, {
 		revalidateOnFocus: false,
 		revalidateIfStale: false,
+		refreshInterval: 0,
+		errorRetryCount: 0,
 	});
 
 	if (error) {
-		console.log(error);
 		return <div>Error loading posts</div>;
 	}
+
+	if (!data) {
+		return <Loader />;
+	}
+
+	setBlogs(data as contextBlogPost[]);
 
 	return (
 		<section className="w-full">
@@ -41,9 +43,9 @@ const PostSection = () => {
 						<LoaderCircleIcon className="animate-spin" />
 					</div>
 				) : (
-					blogs.slice(0, 2).map((post: any) => (
-						<Link to={`blogs/${post.node.slug}`} key={post.node.id}>
-							<Posts key={post.node.id} slug={post.node.title} description={post.node.brief} />
+					data.map((post: any) => (
+						<Link to={`blogs/${post.slug}`} key={post.id}>
+							<Posts key={post.id} slug={post.title} description={post.description} />
 						</Link>
 					))
 				)}
@@ -52,4 +54,4 @@ const PostSection = () => {
 	);
 };
 
-export default PostSection;
+export default BlogSection;

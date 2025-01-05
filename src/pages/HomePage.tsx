@@ -1,4 +1,4 @@
-import PostSection from "@/components/shared/PostSection";
+import BlogSection from "@/components/shared/PostSection";
 import ProjectSection from "@/components/shared/ProjectSection";
 import Skills from "@/components/shared/Skills";
 
@@ -13,7 +13,7 @@ const HomePage = () => {
 				</p>
 			</div>
 			<div className="mt-16 text-lg  flex flex-col justify-between items-center">
-				<PostSection />
+				<BlogSection />
 				<Skills />
 				<ProjectSection />
 			</div>
