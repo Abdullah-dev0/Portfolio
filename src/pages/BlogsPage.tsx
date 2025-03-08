@@ -1,5 +1,5 @@
-import Loader from "@/components/shared/Loader";
-import Posts from "@/components/shared/Posts";
+import Loader from "@/components/shared/loader";
+import Posts from "@/components/shared/posts";
 import { contextBlogPost, useBlog } from "@/context/blog";
 import { getAllPosts } from "@/lib/api";
 import { useEffect, useState } from "react";

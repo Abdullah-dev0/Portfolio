@@ -1,6 +1,6 @@
 import { projects } from "@/constants";
 import { Link } from "react-router-dom";
-import Posts from "./Posts";
+import Posts from "./posts";
 import { Button } from "../ui/button";
 
 const PostSection = () => {
@@ -9,7 +9,7 @@ const PostSection = () => {
 			<div className="flex items-center text-[18px] max-sm:text-[16px] gap-2  justify-between flex-wrap">
 				<h1 className="">Latest Projects</h1>
 				<Link to="/projects">
-					<Button variant={"secondary"}>See All Project</Button>
+					<Button variant={"secondary"}>See All Projects</Button>
 				</Link>
 			</div>
 			<div>

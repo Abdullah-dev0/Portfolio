@@ -1,4 +1,4 @@
-import Posts from "@/components/shared/Posts";
+import Posts from "@/components/shared/posts";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/constants";
 import React from "react";

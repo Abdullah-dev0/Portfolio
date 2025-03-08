@@ -3,8 +3,8 @@ import { LoaderCircleIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import useSWR from "swr";
 import { Button } from "../ui/button";
-import Loader from "./Loader";
-import Posts from "./Posts";
+import Loader from "./loader";
+import Posts from "./posts";
 import { contextBlogPost, useBlog } from "@/context/blog";
 
 // Fetcher function for SWR

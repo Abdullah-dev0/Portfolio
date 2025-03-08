@@ -1,6 +1,7 @@
-import BlogSection from "@/components/shared/PostSection";
-import ProjectSection from "@/components/shared/ProjectSection";
-import Skills from "@/components/shared/Skills";
+import GithubContribution from "@/components/shared/githubContributions";
+import BlogSection from "@/components/shared/postSection";
+import ProjectSection from "@/components/shared/projectSection";
+import Skills from "@/components/shared/skills";
 
 const HomePage = () => {
 	return (
@@ -16,6 +17,7 @@ const HomePage = () => {
 				<BlogSection />
 				<Skills />
 				<ProjectSection />
+				<GithubContribution />
 			</div>
 		</>
 	);
