@@ -4,12 +4,12 @@ import "./index.css";
 import Layout from "./layout.tsx";
 import AboutMe from "./pages/AboutMe.tsx";
 import BlogsDetails from "./pages/BlogsDetails.tsx";
-import BlogsPage from "./pages/BlogsPage.tsx";
+import BlogsPage from "./pages/Blogspage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
-import HomePage from "./pages/HomePage.tsx";
+import HomePage from "./pages/Homepage.tsx";
 import ProjectDetails from "./pages/ProjectDetails.tsx";
-import ProjectsPage from "./pages/ProjectsPage.tsx";
+import ProjectsPage from "./pages/Projectspage.tsx";
 import { BlogProvider } from "./context/blog.tsx";
 
 const router = createBrowserRouter(
