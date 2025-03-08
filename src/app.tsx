@@ -1,7 +1,7 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import { ThemeProvider } from "./components/shared/theme-provider.tsx";
 import "./index.css";
-import Layout from "./Layout.tsx";
+import Layout from "./layout.tsx";
 import AboutMe from "./pages/AboutMe.tsx";
 import BlogsDetails from "./pages/BlogsDetails.tsx";
 import BlogsPage from "./pages/BlogsPage.tsx";
