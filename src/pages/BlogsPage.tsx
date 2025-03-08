@@ -48,8 +48,12 @@ const BlogsPage = () => {
 	}, [pageFromUrl]);
 
 	if (isLoading) return <Loader />;
-	if (error) return <div>Error loading posts</div>;
-	if (!data) return <div>No posts found</div>;
+	if (error) {
+		return (
+			<div className="text-red-500 flex items-center justify-center h-[60vh] text-xl py-5">Error loading Blogs</div>
+		);
+	}
+	if (!data) return <div>No Blogs found</div>;
 
 	return (
 		<div className="container mx-auto px-4 py-8">

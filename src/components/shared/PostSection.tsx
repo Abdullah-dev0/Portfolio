@@ -20,7 +20,7 @@ const BlogSection = () => {
 	});
 
 	if (error) {
-		return <div>Error loading posts</div>;
+		return <div className="text-red-500 justify-center text-xl py-5">Error loading Blogs</div>;
 	}
 
 	if (!data) {
@@ -32,9 +32,9 @@ const BlogSection = () => {
 	return (
 		<section className="w-full">
 			<div className="flex items-center  text-[18px] max-sm:text-[16px] gap-2 justify-between flex-wrap">
-				<h1 className="">Latest Posts</h1>
+				<h1 className="">Latest Blogs</h1>
 				<Link to="/blogs">
-					<Button variant={"secondary"}>View All</Button>
+					<Button variant={"secondary"}>View All Blogs</Button>
 				</Link>
 			</div>
 			<div>
