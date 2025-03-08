@@ -62,7 +62,7 @@ const BlogsPage = () => {
 					key={blog.id}
 					to={`/blogs/${blog.slug}?fromPage=${currentPage}`}
 					className="transition-transform hover:scale-105">
-					<Posts key={blog.id} slug={blog.slug} description={blog.description} />
+					<Posts key={blog.id} slug={blog.title} description={blog.description} />
 				</Link>
 			))}
 			{data.length < postsPerPage && (
