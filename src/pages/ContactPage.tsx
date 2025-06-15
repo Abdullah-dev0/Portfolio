@@ -15,19 +15,18 @@ import { z } from "zod";
 const formSchema = z.object({
 	name: z.string().min(1, "Name is required").trim(),
 	email: z.string().email("Invalid email address").min(1, "Email is required"),
-	message: z.string().min(5, "Message must be at least 5 characters"),
+	message: z.string().min(3, "Message must be at least 3 characters"),
 });
 
 const ContactPage = () => {
 	const [state, handleSubmitSpree] = useFormSpree("xqazjbed");
 	const [redirect, setRedirect] = useState(false);
-
 	// For handling form with react-hook-form and zod validation
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm({
+	} = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 	});
 
@@ -35,7 +34,7 @@ const ContactPage = () => {
 		if (state.succeeded) {
 			const timer = setTimeout(() => {
 				setRedirect(true);
-			}, 3000);
+			}, 2000);
 
 			return () => clearTimeout(timer);
 		}
@@ -48,13 +47,12 @@ const ContactPage = () => {
 	if (state.succeeded) {
 		return <p className="grid place-content-center h-[50vh] text-2xl">Thanks for your message!</p>;
 	}
-
 	if (state.errors) {
 		toast.error("An error occurred, please try again later.");
 		return <Navigate to="/" replace={true} />;
 	}
 
-	const onSubmit = async (data: any) => {
+	const onSubmit = async (data: z.infer<typeof formSchema>) => {
 		await handleSubmitSpree(data);
 	};
 

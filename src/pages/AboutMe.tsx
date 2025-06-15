@@ -23,7 +23,7 @@ const AboutMe = () => {
 				<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
 					<div className="space-y-2">
 						<h2 className="text-xl sm:text-2xl font-semibold">FullTime - Full Stack Engineer</h2>
-						<div className="flex flex-col sm:flex-row gap-2 text-sm">
+						<div className="flex flex-col sm:flex-row gap-2 text-base">
 							<p className="flex items-center gap-1">
 								<Building2 size={18} />
 								<a href="https://bizofdev.com/" target="_blank" rel="noopener noreferrer">
@@ -45,7 +45,7 @@ const AboutMe = () => {
 			<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-12">
 				<div className="space-y-2">
 					<h2 className="text-xl sm:text-2xl font-semibold">Intern - Full Stack Developer</h2>
-					<div className="flex flex-col sm:flex-row gap-2 text-sm">
+					<div className="flex flex-col sm:flex-row gap-2 text-base">
 						<p className="flex items-center gap-1">
 							<Building2 size={18} />
 							DevelopersHub Corporation
@@ -65,7 +65,7 @@ const AboutMe = () => {
 			<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
 				<div className="space-y-2">
 					<h2 className="text-xl  font-semibold">Bachelor of Science in Information Technology</h2>
-					<div className="flex flex-col sm:flex-row gap-2 text-sm">
+					<div className="flex flex-col sm:flex-row gap-2 text-base">
 						<p className="flex items-center gap-1">
 							<GraduationCapIcon size={18} />
 							University of Gujrat
