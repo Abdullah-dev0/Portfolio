@@ -56,7 +56,7 @@ const BlogsPage = () => {
 	if (!data) return <div>No Blogs found</div>;
 
 	return (
-		<div className="container mx-auto px-4 py-8">
+		<div className="container mx-auto px-4 py-8 ">
 			{data.map((blog: BlogPost) => (
 				<Link
 					key={blog.id}
@@ -71,7 +71,7 @@ const BlogsPage = () => {
 				</p>
 			)}
 
-			<div className="flex justify-between items-center mx-5 mt-8">
+			<div className="flex justify-between items-center mx-5 mt-auto">
 				<button
 					onClick={() => handlePageChange(currentPage - 1)}
 					disabled={currentPage === 1}
