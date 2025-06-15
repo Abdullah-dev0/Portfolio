@@ -6,14 +6,14 @@ import "./index.css";
 
 const Layout = () => {
 	return (
-		<>
+		<div className="min-h-screen flex flex-col">
 			<Navbar />
-			<main className="mx-auto mt-32 max-sm:mt-40 lg:p-0 px-5 min-h-[60vh] max-w-screen-sm">
+			<main className="mx-auto mt-32 max-sm:mt-40 lg:p-0 px-5 max-w-screen-sm flex-1">
 				<Outlet />
 				<Toaster position="top-center" richColors />
 			</main>
 			<Footer />
-		</>
+		</div>
 	);
 };
 
