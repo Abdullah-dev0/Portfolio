@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/lib/api";
-import { LoaderCircleIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import useSWR from "swr";
 import { Button } from "../ui/button";
@@ -7,10 +7,7 @@ import Loader from "./loader";
 import Posts from "./posts";
 import { contextBlogPost, useBlog } from "@/context/blog";
 
-// Fetcher function for SWR
-
 const BlogSection = () => {
-	// Use SWR for fetching and caching posts
 	const { setBlogs } = useBlog();
 	const { data, error, isLoading } = useSWR("posts", getAllPosts, {
 		revalidateOnFocus: false,
@@ -20,7 +17,11 @@ const BlogSection = () => {
 	});
 
 	if (error) {
-		return <div className="text-red-500 justify-center text-xl py-5">Error loading Blogs</div>;
+		return (
+			<div className="text-center py-12">
+				<p className="text-destructive">Error loading blogs</p>
+			</div>
+		);
 	}
 
 	if (!data) {
@@ -30,22 +31,35 @@ const BlogSection = () => {
 	setBlogs(data as contextBlogPost[]);
 
 	return (
-		<section className="w-full">
-			<div className="flex items-center  text-[18px] max-sm:text-[16px] gap-2 justify-between flex-wrap">
-				<h1 className="">Latest Blogs</h1>
+		<section className="space-y-12">
+			<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+				<div className="space-y-2">
+					<h2 className="text-3xl md:text-4xl font-bold">Latest Articles</h2>
+					<p className="text-muted-foreground">
+						Thoughts and insights on web development
+					</p>
+				</div>
 				<Link to="/blogs">
-					<Button variant={"secondary"}>View All Blogs</Button>
+					<Button variant="outline" className="group">
+						View All Articles
+						<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+					</Button>
 				</Link>
 			</div>
-			<div>
+			
+			<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 				{isLoading ? (
-					<div className="flex justify-center h-[25vh] items-center">
-						<LoaderCircleIcon className="animate-spin" />
+					<div className="col-span-full flex justify-center py-12">
+						<div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
 					</div>
 				) : (
 					data.map((post: any) => (
 						<Link to={`blogs/${post.slug}`} key={post.id}>
-							<Posts key={post.id} slug={post.title} description={post.description} />
+							<Posts 
+								key={post.id} 
+								slug={post.title} 
+								description={post.description} 
+							/>
 						</Link>
 					))
 				)}

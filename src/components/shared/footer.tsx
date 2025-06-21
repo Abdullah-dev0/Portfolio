@@ -1,16 +1,21 @@
 import { ModeToggle } from "./modeToggle";
 
-const footer = () => {
+const Footer = () => {
 	return (
-		<footer className="w-full max-w-screen-sm mx-auto py-8 px-4 lg:px-0 mt-auto">
-			<div className="flex justify-between items-center">
-				<div>© 2025 | Abdullah</div>
-				<div>
-					<ModeToggle />
+		<footer className="border-t border-border bg-card/50">
+			<div className="container-custom py-12">
+				<div className="flex flex-col md:flex-row justify-between items-center gap-6">
+					<div className="text-sm text-muted-foreground">
+						© 2025 Abdullah. All rights reserved.
+					</div>
+					<div className="flex items-center gap-4">
+						<span className="text-sm text-muted-foreground">Theme</span>
+						<ModeToggle />
+					</div>
 				</div>
 			</div>
 		</footer>
 	);
 };
 
-export default footer;
+export default Footer;

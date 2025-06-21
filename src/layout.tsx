@@ -6,9 +6,9 @@ import "./index.css";
 
 const Layout = () => {
 	return (
-		<div className="min-h-screen flex flex-col">
+		<div className="min-h-screen flex flex-col bg-background">
 			<Navbar />
-			<main className="mx-auto mt-32 max-sm:mt-40 lg:p-0 px-5 max-w-screen-sm flex-1">
+			<main className="flex-1 pt-24">
 				<Outlet />
 				<Toaster position="top-center" richColors />
 			</main>

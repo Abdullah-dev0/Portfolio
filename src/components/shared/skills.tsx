@@ -1,28 +1,36 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { skills } from "@/constants";
-import "devicon";
 
 const Skills = () => {
   return (
-    <div className="mt-12">
-      <h1 className="uppercase text-center font-medium max-sm:text-xl text-4xl">My Skills</h1>
+    <div className="space-y-12">
+      <div className="text-center space-y-4">
+        <h2 className="text-3xl md:text-4xl font-bold">Skills & Technologies</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Technologies I work with to bring ideas to life
+        </p>
+      </div>
+      
       <TooltipProvider delayDuration={100}>
-        <div className="flex gap-7 flex-wrap mt-8 justify-start max-sm:justify-center items-center">
+        <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-6 max-w-4xl mx-auto">
           {skills.map((skill) => (
             <Tooltip key={skill.id}>
               <TooltipTrigger asChild>
-                <button className="z-0 group relative box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-unit-4 min-w-unit-20 text-small gap-unit-2 [&>svg]:max-w-[theme(spacing.unit-8)] data-[pressed=true]:scale-[0.97] transition-transform-colors-opacity motion-reduce:transition-none text-default-foreground data-[hover=true]:opacity-hover border backdrop-blur-2xl dark:bg-zinc-800/30 bg-zinc-900/85 border-neutral-800 rounded-xl flex justify-center items-center h-20 w-20">
+                <div className="group relative flex flex-col items-center justify-center p-6 bg-card border border-border rounded-xl hover:shadow-lg hover:border-primary/20 transition-all duration-300 card-hover">
                   <img
                     src={skill.icon}
                     alt={skill.name}
                     loading="lazy"
-                    width={50}
-                    height={50}
-                    className={`w-15 h-15 object-contain ${skill.className}`}
+                    width={40}
+                    height={40}
+                    className={`w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110 ${skill.className || ""}`}
                   />
-                </button>
+                  <span className="text-xs font-medium text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {skill.name}
+                  </span>
+                </div>
               </TooltipTrigger>
-              <TooltipContent className="mb-2">
+              <TooltipContent>
                 <p className="text-sm font-medium">{skill.name}</p>
               </TooltipContent>
             </Tooltip>

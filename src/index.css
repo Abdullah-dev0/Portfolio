@@ -1,56 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.font-space-grotesk {
-   font-family: "Space Grotesk";
+.font-inter {
+   font-family: "Inter", sans-serif;
 }
 
 @layer base {
    :root {
       --background: 0 0% 100%;
-      --foreground: 224 71.4% 4.1%;
-      --card: 0 0% 100%;
-      --card-foreground: 224 71.4% 4.1%;
+      --foreground: 0 0% 17.6%;
+      --card: 0 0% 96.1%;
+      --card-foreground: 0 0% 17.6%;
       --popover: 0 0% 100%;
-      --popover-foreground: 224 71.4% 4.1%;
-      --primary: 262.1 83.3% 57.8%;
-      --primary-foreground: 210 20% 98%;
-      --secondary: 220 14.3% 95.9%;
-      --secondary-foreground: 220.9 39.3% 11%;
-      --muted: 220 14.3% 95.9%;
-      --muted-foreground: 220 8.9% 46.1%;
-      --accent: 220 14.3% 95.9%;
-      --accent-foreground: 220.9 39.3% 11%;
+      --popover-foreground: 0 0% 17.6%;
+      --primary: 221 83% 53%;
+      --primary-foreground: 0 0% 98%;
+      --secondary: 0 0% 96.1%;
+      --secondary-foreground: 0 0% 17.6%;
+      --muted: 0 0% 96.1%;
+      --muted-foreground: 0 0% 45.1%;
+      --accent: 32 21% 65%;
+      --accent-foreground: 0 0% 17.6%;
       --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 20% 98%;
-      --border: 220 13% 91%;
-      --input: 220 13% 91%;
-      --ring: 262.1 83.3% 57.8%;
-      --radius: 0.5rem;
+      --destructive-foreground: 0 0% 98%;
+      --border: 0 0% 89.8%;
+      --input: 0 0% 89.8%;
+      --ring: 221 83% 53%;
+      --radius: 0.75rem;
    }
 
    .dark {
-      --background: 224 71.4% 4.1%;
-      --foreground: 210 20% 98%;
-      --card: 224 71.4% 4.1%;
-      --card-foreground: 210 20% 98%;
-      --popover: 224 71.4% 4.1%;
-      --popover-foreground: 210 20% 98%;
-      --primary: 263.4 70% 50.4%;
-      --primary-foreground: 210 20% 98%;
-      --secondary: 215 27.9% 16.9%;
-      --secondary-foreground: 210 20% 98%;
-      --muted: 215 27.9% 16.9%;
-      --muted-foreground: 217.9 10.6% 64.9%;
-      --accent: 215 27.9% 16.9%;
-      --accent-foreground: 210 20% 98%;
+      --background: 0 0% 3.9%;
+      --foreground: 0 0% 98%;
+      --card: 0 0% 3.9%;
+      --card-foreground: 0 0% 98%;
+      --popover: 0 0% 3.9%;
+      --popover-foreground: 0 0% 98%;
+      --primary: 221 83% 53%;
+      --primary-foreground: 0 0% 98%;
+      --secondary: 0 0% 14.9%;
+      --secondary-foreground: 0 0% 98%;
+      --muted: 0 0% 14.9%;
+      --muted-foreground: 0 0% 63.9%;
+      --accent: 32 21% 65%;
+      --accent-foreground: 0 0% 98%;
       --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 20% 98%;
-      --border: 215 27.9% 16.9%;
-      --input: 215 27.9% 16.9%;
-      --ring: 263.4 70% 50.4%;
+      --destructive-foreground: 0 0% 98%;
+      --border: 0 0% 14.9%;
+      --input: 0 0% 14.9%;
+      --ring: 221 83% 53%;
    }
 }
 
@@ -58,7 +58,99 @@
    * {
       @apply border-border;
    }
-   body {
-      @apply bg-background text-foreground font-space-grotesk scroll-smooth;
+   
+   html {
+      scroll-behavior: smooth;
    }
+   
+   body {
+      @apply bg-background text-foreground font-inter antialiased;
+      font-feature-settings: "rlig" 1, "calt" 1;
+   }
+   
+   h1, h2, h3, h4, h5, h6 {
+      @apply font-inter;
+      line-height: 1.2;
+   }
+   
+   p {
+      line-height: 1.6;
+   }
+}
+
+@layer components {
+   .section-spacing {
+      @apply py-24 px-6 lg:px-8;
+   }
+   
+   .container-custom {
+      @apply max-w-6xl mx-auto;
+   }
+   
+   .card-hover {
+      @apply transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1;
+   }
+   
+   .text-gradient {
+      @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+   }
+   
+   .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+   }
+   
+   .slide-up {
+      animation: slideUp 0.8s ease-out forwards;
+   }
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+@keyframes slideUp {
+   from {
+      opacity: 0;
+      transform: translateY(40px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+/* Smooth scrolling for navigation */
+@media (prefers-reduced-motion: no-preference) {
+   html {
+      scroll-behavior: smooth;
+   }
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+   @apply outline-2 outline-offset-2 outline-primary;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+   width: 8px;
+}
+
+::-webkit-scrollbar-track {
+   @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+   @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   @apply bg-muted-foreground/50;
 }

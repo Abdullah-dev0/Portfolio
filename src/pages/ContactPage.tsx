@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { Link, Navigate } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
+import { Send, Mail, MessageSquare } from "lucide-react";
 
 // Zod schema for form validation
 const formSchema = z.object({
@@ -21,7 +22,7 @@ const formSchema = z.object({
 const ContactPage = () => {
 	const [state, handleSubmitSpree] = useFormSpree("xqazjbed");
 	const [redirect, setRedirect] = useState(false);
-	// For handling form with react-hook-form and zod validation
+	
 	const {
 		register,
 		handleSubmit,
@@ -45,8 +46,21 @@ const ContactPage = () => {
 	}
 
 	if (state.succeeded) {
-		return <p className="grid place-content-center h-[50vh] text-2xl">Thanks for your message!</p>;
+		return (
+			<div className="section-spacing">
+				<div className="container-custom max-w-2xl text-center space-y-6">
+					<div className="w-16 h-16 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto">
+						<Mail className="w-8 h-8 text-green-600" />
+					</div>
+					<h1 className="text-3xl font-bold">Message Sent!</h1>
+					<p className="text-lg text-muted-foreground">
+						Thanks for reaching out! I'll get back to you soon.
+					</p>
+				</div>
+			</div>
+		);
 	}
+
 	if (state.errors) {
 		toast.error("An error occurred, please try again later.");
 		return <Navigate to="/" replace={true} />;
@@ -57,48 +71,130 @@ const ContactPage = () => {
 	};
 
 	return (
-		<section className="space-y-6 w-full  mx-auto px-8 lg:px-0">
-			<p className="text-center text-2xl">Let's connect and build something cool together!</p>
-			<div className="flex flex-col-reverse justify-center items-center  gap-6 max-sm:gap-y-12">
-				<div className="w-full">
-					<form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-						<div>
-							<Label htmlFor="name">Name</Label>
-							<Input id="name" type="text" disabled={state.submitting} {...register("name")} />
-							{errors.name && <p className="text-red-500 text-sm mt-1">{errors?.name?.message?.toString()}</p>}
+		<div className="section-spacing">
+			<div className="container-custom max-w-4xl">
+				<div className="space-y-16">
+					{/* Header */}
+					<div className="text-center space-y-6 fade-in">
+						<h1 className="text-4xl md:text-5xl font-bold">Get In Touch</h1>
+						<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+							Let's connect and build something amazing together! I'm always open to discussing new opportunities and interesting projects.
+						</p>
+					</div>
+
+					<div className="grid lg:grid-cols-2 gap-16 items-start">
+						{/* Contact Form */}
+						<div className="space-y-8 slide-up">
+							<div className="space-y-2">
+								<div className="flex items-center gap-3">
+									<MessageSquare className="h-6 w-6 text-primary" />
+									<h2 className="text-2xl font-semibold">Send a Message</h2>
+								</div>
+								<p className="text-muted-foreground">
+									Fill out the form below and I'll get back to you as soon as possible.
+								</p>
+							</div>
+
+							<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+								<div className="space-y-2">
+									<Label htmlFor="name">Name</Label>
+									<Input 
+										id="name" 
+										type="text" 
+										disabled={state.submitting} 
+										{...register("name")}
+										className="h-12"
+									/>
+									{errors.name && (
+										<p className="text-destructive text-sm">{errors?.name?.message?.toString()}</p>
+									)}
+								</div>
+
+								<div className="space-y-2">
+									<Label htmlFor="email">Email Address</Label>
+									<Input 
+										id="email" 
+										type="email" 
+										disabled={state.submitting} 
+										{...register("email")}
+										className="h-12"
+									/>
+									{errors.email && (
+										<p className="text-destructive text-sm">{errors?.email?.message?.toString()}</p>
+									)}
+								</div>
+
+								<div className="space-y-2">
+									<Label htmlFor="message">Message</Label>
+									<Textarea 
+										id="message" 
+										{...register("message")} 
+										disabled={state.submitting}
+										className="min-h-[120px] resize-none"
+									/>
+									{errors.message && (
+										<p className="text-destructive text-sm">{errors?.message?.message?.toString()}</p>
+									)}
+								</div>
+
+								<Button 
+									type="submit" 
+									disabled={state.submitting} 
+									size="lg"
+									className="w-full group"
+								>
+									{state.submitting ? (
+										<>
+											<div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+											Sending...
+										</>
+									) : (
+										<>
+											Send Message
+											<Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+										</>
+									)}
+								</Button>
+							</form>
 						</div>
 
-						<div>
-							<Label htmlFor="email">Email Address</Label>
-							<Input id="email" type="email" disabled={state.submitting} {...register("email")} />
-							{errors.email && <p className="text-red-500 text-sm mt-1">{errors?.email?.message?.toString()}</p>}
-						</div>
+						{/* Social Links */}
+						<div className="space-y-8 slide-up" style={{ animationDelay: "0.2s" }}>
+							<div className="space-y-2">
+								<h2 className="text-2xl font-semibold">Connect With Me</h2>
+								<p className="text-muted-foreground">
+									Find me on these platforms or reach out directly.
+								</p>
+							</div>
 
-						<div>
-							<Label htmlFor="message">Message</Label>
-							<Textarea id="message" {...register("message")} disabled={state.submitting} />
-							{errors.message && <p className="text-red-500 text-sm mt-1">{errors?.message?.message?.toString()}</p>}
+							<div className="grid gap-4">
+								{socialLinks.map((link) => (
+									<Link key={link.id} to={link.url} target="_blank">
+										<div className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:shadow-lg hover:border-primary/20 transition-all duration-300 card-hover group">
+											<div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+												<img 
+													src={link.icon} 
+													alt={link.name} 
+													className={`h-6 w-6 ${link.className || ""}`} 
+												/>
+											</div>
+											<div className="flex-1">
+												<h3 className="font-medium group-hover:text-primary transition-colors">
+													{link.name}
+												</h3>
+												<p className="text-sm text-muted-foreground">
+													Connect on {link.name}
+												</p>
+											</div>
+										</div>
+									</Link>
+								))}
+							</div>
 						</div>
-
-						<Button type="submit" disabled={state.submitting} className="mt-4 w-full">
-							Submit
-						</Button>
-					</form>
-				</div>
-				<div className="flex gap-5 flex-wrap justify-center mx-auto">
-					{socialLinks.map((link) => (
-						<Link key={link.id} to={link.url} target="_blank">
-							<button className="z-0 group relative box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-unit-4 min-w-unit-20 text-small gap-unit-2 [&>svg]:max-w-[theme(spacing.unit-8)] data-[pressed=true]:scale-[0.97] transition-transform-colors-opacity motion-reduce:transition-none  data-[hover=true]:opacity-hover border backdrop-blur-2xl dark:bg-zinc-800/30 bg-zinc-900/85 text-white border-neutral-800  rounded-xl flex justify-center items-center p-5">
-								<span className="flex gap-4 justify-center items-center text-lg">
-									<img src={link.icon} alt={link.name} className={`h-7 w-7 ${link.className}`} />
-									{link.name}
-								</span>
-							</button>
-						</Link>
-					))}
+					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 	);
 };
 

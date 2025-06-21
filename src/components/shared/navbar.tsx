@@ -1,28 +1,62 @@
 import { navLinks } from "@/constants";
 import { Link, NavLink } from "react-router-dom";
+import { ModeToggle } from "./modeToggle";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 20);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	return (
-		<nav className="fixed z-50 text-white bg-gray-900  top-0 w-full px-5 p-3 lg:px-0">
-			<div className=" flex justify-between gap-4 max-w-screen-sm items-center pt-6 mx-auto sm:text-lg flex-wrap max-sm:justify-center">
-				<div className="leading-5">
-					<Link to="/">Abdullah</Link>
-					<div className="bg-green-500 w-full h-1 rotate-2"></div>
-				</div>
-				<div className="justify-end">
-					<ul className="flex gap-4 flex-wrap">
-						{navLinks.map((link) => (
-							<li key={link.id}>
-								<NavLink
-									to={link.path}
-									className={({ isActive }) =>
-										`${isActive ? "opacity-65 animate-pulse transition-all" : null} underline hover:opacity-70 `
-									}>
-									{link.name}
-								</NavLink>
-							</li>
-						))}
-					</ul>
+		<nav className={`fixed z-50 top-0 w-full transition-all duration-300 ${
+			isScrolled 
+				? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm" 
+				: "bg-transparent"
+		}`}>
+			<div className="container-custom">
+				<div className="flex justify-between items-center py-6">
+					<Link 
+						to="/" 
+						className="text-xl font-semibold text-foreground hover:text-primary transition-colors duration-200"
+					>
+						Abdullah
+					</Link>
+					
+					<div className="flex items-center gap-8">
+						<ul className="hidden md:flex gap-8">
+							{navLinks.map((link) => (
+								<li key={link.id}>
+									<NavLink
+										to={link.path}
+										className={({ isActive }) =>
+											`text-sm font-medium transition-all duration-200 hover:text-primary relative ${
+												isActive ? "text-primary" : "text-muted-foreground"
+											}`
+										}
+									>
+										{({ isActive }) => (
+											<>
+												{link.name}
+												{isActive && (
+													<span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full" />
+												)}
+											</>
+										)}
+									</NavLink>
+								</li>
+							))}
+						</ul>
+						
+						<ModeToggle />
+					</div>
 				</div>
 			</div>
 		</nav>

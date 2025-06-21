@@ -2,23 +2,37 @@ import { projects } from "@/constants";
 import { Link } from "react-router-dom";
 import Posts from "./posts";
 import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
 
-const PostSection = () => {
+const ProjectSection = () => {
 	return (
-		<section className="w-full mt-12">
-			<div className="flex items-center text-[18px] max-sm:text-[16px] gap-2  justify-between flex-wrap">
-				<h1 className="">Latest Projects</h1>
+		<section className="space-y-12">
+			<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+				<div className="space-y-2">
+					<h2 className="text-3xl md:text-4xl font-bold">Latest Projects</h2>
+					<p className="text-muted-foreground">
+						Recent work showcasing my development skills
+					</p>
+				</div>
 				<Link to="/projects">
-					<Button variant={"secondary"}>See All Projects</Button>
+					<Button variant="outline" className="group">
+						View All Projects
+						<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+					</Button>
 				</Link>
 			</div>
-			<div>
+			
+			<div className="grid gap-6 md:grid-cols-2">
 				{projects
 					.slice(-2)
 					.reverse()
 					.map((project) => (
 						<Link to={`projects/${project.slug}`} key={project.id}>
-							<Posts key={project.id} slug={project.slug} description={project.description} />
+							<Posts 
+								key={project.id} 
+								slug={project.slug} 
+								description={project.description} 
+							/>
 						</Link>
 					))}
 			</div>
@@ -26,4 +40,4 @@ const PostSection = () => {
 	);
 };
 
-export default PostSection;
+export default ProjectSection;
