@@ -27,7 +27,7 @@ const BlogSection = () => {
 		return <Loader />;
 	}
 
-	setBlogs(data as contextBlogPost[]);
+	setBlogs(data);
 
 	return (
 		<section className="w-full">
@@ -37,13 +37,13 @@ const BlogSection = () => {
 					<Button variant={"secondary"}>View All Blogs</Button>
 				</Link>
 			</div>
-			<div>
+			<div className="flex flex-col gap-6 mt-4">
 				{isLoading ? (
 					<div className="flex justify-center h-[25vh] items-center">
 						<LoaderCircleIcon className="animate-spin" />
 					</div>
 				) : (
-					data.map((post: any) => (
+					data.map((post: contextBlogPost) => (
 						<Link to={`blogs/${post.slug}`} key={post.id}>
 							<Posts key={post.id} slug={post.title} description={post.description} />
 						</Link>

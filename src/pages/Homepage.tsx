@@ -1,17 +1,79 @@
 import GithubContribution from "@/components/shared/githubContributions";
-import BlogSection from "@/components/shared/postSection";
+import BlogSection from "@/components/shared/blogSection";
 import ProjectSection from "@/components/shared/projectSection";
 import Skills from "@/components/shared/skills";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Code, Download, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
+	const handleDownloadResume = () => {
+		const resumeUrl = "/Abdullah.pdf";
+		const link = document.createElement("a");
+		link.href = resumeUrl;
+		link.download = "Abdullah_Resume.pdf"; // You can specify the downloaded file name
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
+
 	return (
 		<>
 			<div className="flex gap-8 flex-col w-full">
-				<h2 className="text-lg">Hi, I'm Abdullah 👋🏻</h2>
-				<p className="sm:text-lg">
-					I'm a Full stack developer with almost 2 years of experience. I am very passionate about implementing Full
-					Stack Application.
-				</p>
+				<section className="elative overflow-hidden">
+					<div className="absolute"></div>
+					<div className="relative">
+						<div className="space-y-6 text-center">
+							<div className="inline-flex items-center gap-2 px-4 py-2 border border-primary/20 rounded-full text-sm font-medium text-primary mb-4">
+								<Sparkles className="h-4 w-4" />
+								Available for new opportunities
+							</div>
+
+							<h1 className="text-hero">
+								Hi, I'm{" "}
+								<span className="text-gradient relative">
+									Abdullah
+									<div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 blur-2xl -z-10"></div>
+								</span>
+							</h1>
+
+							<p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+								Full Stack Developer crafting exceptional digital experiences with modern technologies. Passionate about
+								building scalable applications that make a difference.
+							</p>
+						</div>
+
+						<div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+							<Link to="/projects">
+								<Button size="lg" className="group glow-effect">
+									<Code className="mr-2 h-5 w-5" />
+									View My Work
+									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+								</Button>
+							</Link>
+							<Button onClick={handleDownloadResume} variant="outline" size="lg" className="group">
+								<Download className="mr-2 h-4 w-4" />
+								Download Resume
+							</Button>
+						</div>
+
+						{/* Quick Stats */}
+						<div className="grid grid-cols-3 gap-8 max-w-md mx-auto pt-12">
+							<div className="text-center">
+								<div className="text-2xl font-bold">2+</div>
+								<div className="text-sm text-muted-foreground">Years Experience</div>
+							</div>
+							<div className="text-center">
+								<div className="text-2xl font-bold ">15+</div>
+								<div className="text-sm text-muted-foreground">Projects Built</div>
+							</div>
+							<div className="text-center">
+								<div className="text-2xl font-bold">5+</div>
+								<div className="text-sm text-muted-foreground">Technologies</div>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 			<div className="mt-16 text-lg  flex flex-col justify-between items-center">
 				<BlogSection />

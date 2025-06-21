@@ -1,10 +1,24 @@
 import { navLinks } from "@/constants";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 20);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 	return (
-		<nav className="fixed z-50 text-white bg-gray-900  top-0 w-full px-5 p-3 lg:px-0">
-			<div className=" flex justify-between gap-4 max-w-screen-sm items-center pt-6 mx-auto sm:text-lg flex-wrap max-sm:justify-center">
+		<nav
+			className={`fixed z-50 top-0 w-full transition-all duration-300 p-4 ${
+				isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm" : "bg-transparent"
+			}`}>
+			<div className="flex justify-between gap-4 max-w-screen-sm items-center mx-auto sm:text-lg flex-wrap max-sm:justify-center">
 				<div className="leading-5">
 					<Link to="/">Abdullah</Link>
 					<div className="bg-green-500 w-full h-1 rotate-2"></div>

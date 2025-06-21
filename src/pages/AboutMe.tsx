@@ -1,84 +1,130 @@
-import { Building2, GraduationCapIcon, MapPin } from "lucide-react";
+import { Building2, GraduationCapIcon, MapPin, Calendar } from "lucide-react";
 
 const AboutMe = () => {
 	return (
-		<div className="">
-			<h2 className="text-4xl max-sm:text-3xl">About Me</h2>
-			<p className="text-lg mt-9 font-semibold ">
-				I'm a <span className="text-red-600 px-1">Full Stack Developer</span>. I have a passion for
-				<span className="text-red-600 px-1">web development</span> and love to create interactive and responsive
-				<span className="text-red-600 px-1">websites</span>. I am always eager to learn new
-				<span className="text-red-600 px-1">technologies</span> and improve my
-				<span className="text-red-600 px-1">skills</span>.
-				<span className="block mt-3">
-					I am <span className="text-red-600 px-1">Targeting</span>
-					<span className="text-red-600 px-1">Full Stack Developer</span> roles with an organization of high repute with
-					a scope of improving
-					<span className="text-red-600 px-1">knowledge</span> and further
-					<span className="text-red-600 px-1">career growth</span>.
-				</span>
-			</p>
-			<h1 className="text-4xl max-sm:text-3xl mt-9">Work Experience</h1>
-			<div>
-				<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
-					<div className="space-y-2">
-						<h2 className="text-xl sm:text-2xl font-semibold">FullTime - Full Stack Engineer</h2>
-						<div className="flex flex-col sm:flex-row gap-2 text-base">
-							<p className="flex items-center gap-1">
-								<Building2 size={18} />
-								<a href="https://bizofdev.com/" target="_blank" rel="noopener noreferrer">
-									Biz of Dev
-								</a>
-							</p>
-							<p className="flex items-center gap-1">
-								<MapPin size={18} />
-								Islamabad, Pakistan
-							</p>
+		<div className="section-spacing">
+			<div className="container-custom max-w-4xl">
+				<div className="space-y-16">
+					{/* Header */}
+					<div className="text-center space-y-6 fade-in">
+						<h1 className="text-4xl md:text-5xl font-bold">About Me</h1>
+						<p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+							I'm a <span className="text-primary font-semibold">Full Stack Developer</span> passionate about creating
+							exceptional web experiences. I love building interactive and responsive applications using modern
+							technologies.
+						</p>
+					</div>
+
+					{/* Mission Statement */}
+					<div className="border border-border rounded-xl p-8 slide-up">
+						<p className="text-lg leading-relaxed text-center">
+							I am targeting <span className="text-primary font-semibold">Full Stack Developer</span> roles with
+							organizations of high repute, seeking opportunities for continuous learning and
+							<span className="text-primary font-semibold"> career growth</span> while contributing to innovative
+							projects.
+						</p>
+					</div>
+
+					{/* Work Experience */}
+					<section className="space-y-8">
+						<h2 className="text-3xl font-bold text-center">Work Experience</h2>
+
+						<div className="space-y-6">
+							{/* Current Role */}
+							<div className=" border border-border rounded-xl p-6 card-hover">
+								<div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+									<div className="space-y-4 flex-1">
+										<h3 className="text-xl font-semibold">Full Stack Engineer</h3>
+										<div className="flex flex-col sm:flex-row gap-4 text-muted-foreground">
+											<div className="flex items-center gap-2">
+												<Building2 className="h-4 w-4" />
+												<a
+													href="https://bizofdev.com/"
+													target="_blank"
+													rel="noopener noreferrer"
+													className="hover:text-primary transition-colors">
+													Biz of Dev
+												</a>
+											</div>
+											<div className="flex items-center gap-2">
+												<MapPin className="h-4 w-4" />
+												<span>Islamabad, Pakistan</span>
+											</div>
+										</div>
+									</div>
+									<div className="space-y-2 lg:text-right">
+										<span className="inline-block bg-green-500 text-white text-sm px-3 py-1 rounded-full">
+											Full Time
+										</span>
+										<div className="flex items-center gap-2 text-sm text-muted-foreground lg:justify-end">
+											<Calendar className="h-4 w-4" />
+											<span>January 2025 - Present</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							{/* Previous Role */}
+							<div className="border border-border rounded-xl p-6 card-hover">
+								<div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+									<div className="space-y-4 flex-1">
+										<h3 className="text-xl font-semibold">Full Stack Developer Intern</h3>
+										<div className="flex flex-col sm:flex-row gap-4 text-muted-foreground">
+											<div className="flex items-center gap-2">
+												<Building2 className="h-4 w-4" />
+												<span>DevelopersHub Corporation</span>
+											</div>
+											<div className="flex items-center gap-2">
+												<MapPin className="h-4 w-4" />
+												<span>Islamabad, Pakistan</span>
+											</div>
+										</div>
+									</div>
+									<div className="space-y-2 lg:text-right">
+										<span className="inline-block bg-blue-500 text-white text-sm px-3 py-1 rounded-full">
+											Internship
+										</span>
+										<div className="flex items-center gap-2 text-sm text-muted-foreground lg:justify-end">
+											<Calendar className="h-4 w-4" />
+											<span>Sep 2024 - Nov 2024</span>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>{" "}
-					<div className="space-y-2 text-right sm:text-left">
-						<p className="bg-green-500 text-sm text-white py-1 px-3 rounded-xl w-fit sm:ml-auto">Full Time</p>
-						<p className="text-sm">January 2025 - Present</p>
-					</div>
-				</div>
-			</div>
-			<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-12">
-				<div className="space-y-2">
-					<h2 className="text-xl sm:text-2xl font-semibold">Intern - Full Stack Developer</h2>
-					<div className="flex flex-col sm:flex-row gap-2 text-base">
-						<p className="flex items-center gap-1">
-							<Building2 size={18} />
-							DevelopersHub Corporation
-						</p>
-						<p className="flex items-center gap-1">
-							<MapPin size={18} />
-							Islamabad, Pakistan
-						</p>
-					</div>
-				</div>
-				<div className="space-y-2 text-right sm:text-left">
-					<p className="bg-green-500 text-sm text-white py-1 px-3 rounded-xl w-fit sm:ml-auto">Internship</p>
-					<p className="text-sm">Sep 2024 - Nov 2024</p>
-				</div>
-			</div>
-			<h1 className="text-4xl max-sm:text-3xl mt-9">Education</h1>{" "}
-			<div className="flex flex-col sm:flex-row justify-between items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-				<div className="space-y-2">
-					<h2 className="text-xl  font-semibold">Bachelor of Science in Information Technology</h2>
-					<div className="flex flex-col sm:flex-row gap-2 text-base">
-						<p className="flex items-center gap-1">
-							<GraduationCapIcon size={18} />
-							University of Gujrat
-						</p>
-						<p className="flex items-center gap-1">
-							<MapPin size={18} />
-							Pakistan
-						</p>
-					</div>
-				</div>{" "}
-				<div className="space-y-2 text-right sm:text-left">
-					<p className="bg-green-500 text-sm text-white py-1 px-3 rounded-xl w-fit sm:ml-auto">Full Time</p>
-					<p className="text-sm">Sep 2021 - August 2025</p>
+					</section>
+
+					{/* Education */}
+					<section className="space-y-8">
+						<h2 className="text-3xl font-bold text-center">Education</h2>
+
+						<div className="border border-border rounded-xl p-6 card-hover">
+							<div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+								<div className="space-y-4 flex-1">
+									<h3 className="text-xl font-semibold">Bachelor of Science in Information Technology</h3>
+									<div className="flex flex-col sm:flex-row gap-4 text-muted-foreground">
+										<div className="flex items-center gap-2">
+											<GraduationCapIcon className="h-4 w-4" />
+											<span>University of Gujrat</span>
+										</div>
+										<div className="flex items-center gap-2">
+											<MapPin className="h-4 w-4" />
+											<span>Pakistan</span>
+										</div>
+									</div>
+								</div>
+								<div className="space-y-2 lg:text-right">
+									<span className="inline-block bg-primary text-primary-foreground text-sm px-3 py-1 rounded-full">
+										Full Time
+									</span>
+									<div className="flex items-center gap-2 text-sm text-muted-foreground lg:justify-end">
+										<Calendar className="h-4 w-4" />
+										<span>Sep 2021 - August 2025</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>

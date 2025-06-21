@@ -15,8 +15,8 @@ import { BlogProvider } from "./context/blog.tsx";
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<Layout />}>
-			<Route index element={<HomePage />} loader={() => <div>loading</div>} />
-			<Route path="blogs" element={<BlogsPage />} loader={() => <div>loading</div>} />
+			<Route index element={<HomePage />} />
+			<Route path="blogs" element={<BlogsPage />} />
 			<Route path="blogs/:slug" element={<BlogsDetails />} />
 			<Route path="projects" element={<ProjectsPage />} />
 			<Route path="projects/:slug" element={<ProjectDetails />} />

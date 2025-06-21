@@ -11,7 +11,7 @@ export default function GithubContribution() {
 	const selectedStyle = "bg-blue-500 text-white dark:bg-blue-600 shadow-sm";
 
 	return (
-		<div className="flex flex-col w-full mt-10 bg-card rounded-lg shadow-sm ">
+		<div className="flex flex-col w-full mt-20 rounded-lg shadow-sm">
 			<div className="flex items-center gap-2 mb-4">
 				<Github size={20} className="text-primary" />
 				<h3 className="md:text-2xl text-lg font-semibold bg-gradient-to-r from-primary to-primary-foreground bg-clip-text text-transparent">

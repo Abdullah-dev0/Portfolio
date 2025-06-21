@@ -25,7 +25,7 @@ const BlogsPage = () => {
 	const [currentPage, setCurrentPage] = useState(pageFromUrl);
 	const postsPerPage = 3;
 
-	const { data, error, isLoading } = useSWR<BlogPost[]>(
+	const { data, error, isLoading } = useSWR<contextBlogPost[]>(
 		[`posts-${currentPage}`, currentPage, postsPerPage],
 		() => getAllPosts(currentPage, postsPerPage),
 		{
@@ -35,8 +35,9 @@ const BlogsPage = () => {
 	);
 
 	useEffect(() => {
-		setBlogs(data as contextBlogPost[]);
-	}, [data]);
+		if (!data) return;
+		setBlogs(data);
+	}, [data, setBlogs]);
 
 	const handlePageChange = (newPage: number) => {
 		setCurrentPage(newPage);
@@ -56,15 +57,17 @@ const BlogsPage = () => {
 	if (!data) return <div>No Blogs found</div>;
 
 	return (
-		<div className="container mx-auto px-4 py-8 ">
-			{data.map((blog: BlogPost) => (
-				<Link
-					key={blog.id}
-					to={`/blogs/${blog.slug}?fromPage=${currentPage}`}
-					className="transition-transform hover:scale-105">
-					<Posts key={blog.id} slug={blog.title} description={blog.description} />
-				</Link>
-			))}
+		<div className="container mx-auto px-4 py-8 space-y-7">
+			<div className="flex flex-col gap-6">
+				{data.map((blog: BlogPost) => (
+					<Link
+						key={blog.id}
+						to={`/blogs/${blog.slug}?fromPage=${currentPage}`}
+						className="transition-transform hover:scale-105">
+						<Posts key={blog.id} slug={blog.title} description={blog.description} />
+					</Link>
+				))}
+			</div>
 			{data.length < postsPerPage && (
 				<p className="text-center mt-10 text-gray-500">
 					🎉 You've reached the end! No more blogs to show for now. Stay tuned for more amazing Blogs! 🚀
