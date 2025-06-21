@@ -1,4 +1,4 @@
-const footer = () => {
+const Footer = () => {
 	return (
 		<footer className="w-full max-w-screen-sm mx-auto py-8 px-4 lg:px-0 mt-auto">
 			<div className="flex justify-center items-center">
@@ -8,4 +8,4 @@ const footer = () => {
 	);
 };
 
-export default footer;
+export default Footer;
