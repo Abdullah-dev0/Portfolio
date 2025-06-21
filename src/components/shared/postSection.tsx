@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/lib/api";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import useSWR from "swr";
 import { Button } from "../ui/button";
@@ -19,7 +19,7 @@ const BlogSection = () => {
 	if (error) {
 		return (
 			<div className="text-center py-12">
-				<p className="text-destructive">Error loading blogs</p>
+				<p className="text-destructive">Error loading articles</p>
 			</div>
 		);
 	}
@@ -31,12 +31,15 @@ const BlogSection = () => {
 	setBlogs(data as contextBlogPost[]);
 
 	return (
-		<section className="space-y-12">
-			<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+		<section className="content-spacing">
+			<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 fade-in">
 				<div className="space-y-2">
-					<h2 className="text-3xl md:text-4xl font-bold">Latest Articles</h2>
+					<div className="inline-flex items-center gap-3 mb-2">
+						<BookOpen className="h-6 w-6 text-primary" />
+						<h2 className="text-section-title">Latest Articles</h2>
+					</div>
 					<p className="text-muted-foreground">
-						Thoughts and insights on web development
+						Thoughts and insights on web development and technology
 					</p>
 				</div>
 				<Link to="/blogs">
@@ -53,14 +56,16 @@ const BlogSection = () => {
 						<div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
 					</div>
 				) : (
-					data.map((post: any) => (
-						<Link to={`blogs/${post.slug}`} key={post.id}>
-							<Posts 
-								key={post.id} 
-								slug={post.title} 
-								description={post.description} 
-							/>
-						</Link>
+					data.map((post: any, index: number) => (
+						<div key={post.id} className="slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+							<Link to={`blogs/${post.slug}`}>
+								<Posts 
+									slug={post.title} 
+									description={post.description}
+									isExternal={true}
+								/>
+							</Link>
+						</div>
 					))
 				)}
 			</div>
