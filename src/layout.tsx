@@ -2,9 +2,12 @@ import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { Outlet } from "react-router-dom";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 import "./index.css";
 
 const Layout = () => {
+	useScrollToTop();
+	
 	return (
 		<div className="min-h-screen flex flex-col">
 			<Navbar />

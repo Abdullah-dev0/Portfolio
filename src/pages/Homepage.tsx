@@ -24,8 +24,8 @@ const HomePage = () => {
 					<div className="absolute"></div>
 					<div className="relative">
 						<div className="space-y-6 text-center">
-							<div className="inline-flex items-center gap-2 px-4 py-2 border border-primary/20 rounded-full text-sm font-medium text-primary mb-4">
-								<Sparkles className="h-4 w-4" />
+							<div className="inline-flex items-center animate-pulse gap-2 px-4 py-2 border border-primary/20 rounded-full text-sm font-medium text-primary mb-4">
+								<Sparkles className="h-4 w-4 text-green-600" />
 								Available for new opportunities
 							</div>
 
@@ -75,7 +75,7 @@ const HomePage = () => {
 					</div>
 				</section>
 			</div>
-			<div className="mt-16 text-lg  flex flex-col justify-between items-center">
+			<div className="mt-16 text-lg  flex flex-col justify-between items-center gap-8">
 				<BlogSection />
 				<Skills />
 				<ProjectSection />

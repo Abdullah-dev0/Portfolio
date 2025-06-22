@@ -33,7 +33,7 @@ export default function GithubContribution() {
 				))}
 			</div>
 
-			<div className="flex justify-center scale-in">
+			<div className="flex justify-center scale-in py-6">
 				<div key={selectedYear} className="w-full max-w-5xl overflow-x-auto card-spacing card-subtle">
 					<div className="flex items-center justify-between mb-4">
 						<div className="flex items-center gap-2 text-sm text-muted-foreground">
