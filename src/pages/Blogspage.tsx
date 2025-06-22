@@ -1,3 +1,4 @@
+import SEOHead from "@/components/seo/SEOHead";
 import Loader from "@/components/shared/loader";
 import Posts from "@/components/shared/posts";
 import { contextBlogPost, useBlog } from "@/context/blog";
@@ -55,9 +56,52 @@ const BlogsPage = () => {
 		);
 	}
 	if (!data) return <div>No Blogs found</div>;
+	// Generate structured data for blog posts
+	const blogsPageStructuredData = {
+		"@context": "https://schema.org",
+		"@type": "Blog",
+		name: "Abdullah's Blog",
+		description:
+			"Insights and tutorials on web development, React, Node.js, and modern programming practices by Abdullah",
+		url: "https://abdullahtech.me/blogs",
+		author: {
+			"@type": "Person",
+			name: "Abdullah",
+		},
+		blogPost:
+			data?.map((post) => ({
+				"@type": "BlogPosting",
+				headline: post.title,
+				description: post.description,
+				url: `https://abdullahtech.me/blogs/${post.slug}`,
+				author: {
+					"@type": "Person",
+					name: "Abdullah",
+				},
+				datePublished: post.published_timestamp,
+				image: post.cover_image,
+			})) || [],
+	};
 
 	return (
 		<div className="container mx-auto px-4 py-8 space-y-7">
+			<SEOHead
+				title="Blogs - Abdullah's Insights"
+				description="Dive into my collection of blogs where I share insights, tutorials, and the latest trends in web development, React, Node.js, and more."
+				keywords={[
+					"Abdullah Blog",
+					"Web Development Blog",
+					"React Tutorials",
+					"Node.js Articles",
+					"Programming Insights",
+					"JavaScript Blog",
+					"TypeScript Tutorials",
+					"Software Engineering",
+				]}
+				url={`/blogs?page=${currentPage}`}
+				type="website"
+				structuredData={blogsPageStructuredData}
+			/>
 			<div className="flex flex-col gap-6">
 				{data.map((blog: BlogPost) => (
 					<Link

@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://abdullahtech.me/sitemap.xml
+
+# Disallow crawling of API endpoints
+Disallow: /api/
+
+# Disallow crawling of admin areas
+Disallow: /admin/
+
+# Allow crawling of important pages
+Allow: /
+Allow: /about
+Allow: /projects
+Allow: /blogs
+Allow: /contact
+
+# Crawl-delay
+Crawl-delay: 1

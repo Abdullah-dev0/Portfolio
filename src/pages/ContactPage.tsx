@@ -1,3 +1,4 @@
+import SEOHead from "@/components/seo/SEOHead";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactHeader from "@/components/contact/ContactHeader";
 import ContactSuccess from "@/components/contact/ContactSuccess";
@@ -18,6 +19,25 @@ const formSchema = z.object({
 const ContactPage = () => {
 	const [state, handleSubmitSpree] = useFormSpree("xqazjbed");
 	const [redirect, setRedirect] = useState(false);
+
+	const contactPageStructuredData = {
+		"@context": "https://schema.org",
+		"@type": "ContactPage",
+		name: "Contact Abdullah",
+		description:
+			"Get in touch with Abdullah - Full Stack Developer. Available for freelance projects, job opportunities, and collaboration.",
+		url: "https://abdullahtech.me/contact",
+		mainEntity: {
+			"@type": "Person",
+			name: "Abdullah",
+			jobTitle: "Full Stack Developer",
+			contactPoint: {
+				"@type": "ContactPoint",
+				contactType: "Professional",
+				availableLanguage: ["English"],
+			},
+		},
+	};
 
 	useEffect(() => {
 		if (state.succeeded) {
@@ -45,9 +65,24 @@ const ContactPage = () => {
 	const onSubmit = async (data: z.infer<typeof formSchema>) => {
 		await handleSubmitSpree(data);
 	};
-
 	return (
 		<div className="section-spacing">
+			<SEOHead
+				title="Contact Abdullah - Full Stack Developer"
+				description="Get in touch with Abdullah - Full Stack Developer. Available for freelance projects, job opportunities, and collaboration."
+				keywords={[
+					"Contact Abdullah",
+					"Hire Full Stack Developer",
+					"Web Developer Contact",
+					"Freelance Developer",
+					"React Developer Hire",
+					"Node.js Developer Contact",
+					"Software Engineer Contact",
+				]}
+				url="/contact"
+				type="website"
+				structuredData={contactPageStructuredData}
+			/>
 			<div className="container-custom max-w-4xl">
 				<div className="space-y-16">
 					<ContactHeader />

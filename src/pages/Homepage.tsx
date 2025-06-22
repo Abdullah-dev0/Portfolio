@@ -2,6 +2,7 @@ import GithubContribution from "@/components/shared/githubContributions";
 import BlogSection from "@/components/shared/blogSection";
 import ProjectSection from "@/components/shared/projectSection";
 import Skills from "@/components/shared/skills";
+import SEOHead from "@/components/seo/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Download, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -17,8 +18,56 @@ const HomePage = () => {
 		document.body.removeChild(link);
 	};
 
+	const homePageStructuredData = {
+		"@context": "https://schema.org",
+		"@type": "ProfilePage",
+		mainEntity: {
+			"@type": "Person",
+			name: "Abdullah",
+			jobTitle: "Full Stack Developer",
+			description:
+				"Full Stack Developer crafting exceptional digital experiences with modern technologies. Passionate about building scalable applications that make a difference.",
+			url: "https://abdullahtech.me",
+			image: "https://abdullahtech.me/images/abdullah-profile.jpg",
+			knowsAbout: [
+				"JavaScript",
+				"TypeScript",
+				"React",
+				"Node.js",
+				"Express.js",
+				"MongoDB",
+				"PostgreSQL",
+				"AWS",
+				"Docker",
+				"Git",
+			],
+			hasOccupation: {
+				"@type": "Occupation",
+				name: "Full Stack Developer",
+			},
+		},
+	};
+
 	return (
 		<>
+			<SEOHead
+				title="Abdullah | Full Stack Developer"
+				description="Full Stack Developer crafting exceptional digital experiences with modern technologies. Passionate about building scalable applications that make a difference."
+				keywords={[
+					"Abdullah",
+					"Full Stack Developer",
+					"React Developer",
+					"Node.js Developer",
+					"TypeScript",
+					"JavaScript",
+					"Web Developer",
+					"Portfolio",
+					"Software Engineer",
+				]}
+				url="/"
+				type="profile"
+				structuredData={homePageStructuredData}
+			/>
 			<div className="flex gap-8 flex-col w-full">
 				<section className="elative overflow-hidden">
 					<div className="absolute"></div>

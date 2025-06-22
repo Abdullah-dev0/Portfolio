@@ -1,4 +1,5 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "./components/shared/themeProvider.tsx";
 import "./index.css";
 import Layout from "./layout.tsx";
@@ -29,11 +30,13 @@ const router = createBrowserRouter(
 
 const App = () => {
 	return (
-		<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-			<BlogProvider>
-				<RouterProvider router={router} />
-			</BlogProvider>
-		</ThemeProvider>
+		<HelmetProvider>
+			<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+				<BlogProvider>
+					<RouterProvider router={router} />
+				</BlogProvider>
+			</ThemeProvider>
+		</HelmetProvider>
 	);
 };
 
