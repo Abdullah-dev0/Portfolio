@@ -31,7 +31,7 @@ const router = createBrowserRouter(
 const App = () => {
 	return (
 		<HelmetProvider>
-			<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+			<ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
 				<BlogProvider>
 					<RouterProvider router={router} />
 				</BlogProvider>

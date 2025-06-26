@@ -10,7 +10,7 @@ export default function GithubContribution() {
 	const years = [currentYear - 3, currentYear - 2, currentYear - 1, currentYear];
 
 	return (
-		<div className="flex flex-col w-full mt-20 rounded-lg shadow-sm">
+		<div className="flex-col w-full mt-20 rounded-lg shadow-sm md:flex hidden">
 			<div className="flex items-center gap-2 mb-4">
 				<Github size={20} className="text-primary" />
 				<h3 className="md:text-2xl text-lg font-semibold bg-gradient-to-r from-primary to-primary-foreground bg-clip-text text-transparent">
@@ -25,8 +25,7 @@ export default function GithubContribution() {
 						variant={selectedYear === year ? "default" : "ghost"}
 						size="sm"
 						onClick={() => setSelectedYear(year)}
-						className="transition-all duration-200"
-					>
+						className="transition-all duration-200">
 						<Calendar className="mr-2 h-4 w-4" />
 						{year}
 					</Button>
@@ -40,12 +39,11 @@ export default function GithubContribution() {
 							<TrendingUp className="h-4 w-4" />
 							<span>Contributions in {selectedYear}</span>
 						</div>
-						<a 
-							href="https://github.com/Abdullah-dev0" 
-							target="_blank" 
+						<a
+							href="https://github.com/Abdullah-dev0"
+							target="_blank"
 							rel="noopener noreferrer"
-							className="text-sm text-primary hover:underline"
-						>
+							className="text-sm text-primary hover:underline">
 							View on GitHub
 						</a>
 					</div>
