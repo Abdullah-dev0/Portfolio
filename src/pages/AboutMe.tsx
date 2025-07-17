@@ -1,5 +1,5 @@
 import SEOHead from "@/components/seo/SEOHead";
-import { Building2, GraduationCapIcon, MapPin, Calendar } from "lucide-react";
+import { Building2, Calendar } from "lucide-react";
 
 const AboutMe = () => {
 	const aboutPageStructuredData = {
@@ -92,10 +92,6 @@ const AboutMe = () => {
 														Biz of Dev
 													</a>
 												</div>
-												<div className="flex items-center gap-2">
-													<MapPin className="h-4 w-4" />
-													<span>Islamabad, Pakistan</span>
-												</div>
 											</div>
 										</div>
 										<div className="space-y-2 lg:text-right">
@@ -119,10 +115,6 @@ const AboutMe = () => {
 												<div className="flex items-center gap-2">
 													<Building2 className="h-4 w-4" />
 													<span>DevelopersHub Corporation</span>
-												</div>
-												<div className="flex items-center gap-2">
-													<MapPin className="h-4 w-4" />
-													<span>Islamabad, Pakistan</span>
 												</div>
 											</div>
 										</div>
@@ -148,20 +140,11 @@ const AboutMe = () => {
 								<div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
 									<div className="space-y-4 flex-1">
 										<h3 className="text-xl font-semibold">Bachelor of Science in Information Technology</h3>
-										<div className="flex flex-col sm:flex-row gap-4 text-muted-foreground">
-											<div className="flex items-center gap-2">
-												<GraduationCapIcon className="h-4 w-4" />
-												<span>University of Gujrat</span>
-											</div>
-											<div className="flex items-center gap-2">
-												<MapPin className="h-4 w-4" />
-												<span>Pakistan</span>
-											</div>
-										</div>
+										<div className="flex flex-col sm:flex-row gap-4 text-muted-foreground"></div>
 									</div>
 									<div className="space-y-2 lg:text-right">
 										<span className="inline-block bg-primary text-primary-foreground text-sm px-3 py-1 rounded-full">
-											Full Time
+											Graduated
 										</span>
 										<div className="flex items-center gap-2 text-sm text-muted-foreground lg:justify-end">
 											<Calendar className="h-4 w-4" />
