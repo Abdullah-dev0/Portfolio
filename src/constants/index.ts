@@ -222,7 +222,7 @@ export const projects = [
 			"uploadthing",
 		],
 		githubUrl: "https://github.com/Abdullah-dev0/TextTalk",
-		liveLink: "https://texttalk.techonline.live",
+		liveLink: "https://texttalk.abdulah.site",
 		img: "/images/Texttalk.jpg",
 		features: [
 			{
