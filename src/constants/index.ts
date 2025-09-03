@@ -209,7 +209,7 @@ export const projects = [
 		id: "5",
 		slug: "TextTalk",
 		description:
-			"TextTalk is a cutting-edge AI-powered web application that lets users interact with PDF documents using natural language. Built with LangChain, it enables users to ask questions, summarize content, paraphrase, and retrieve related PDFs from the internet. TextTalk supports multiple languages and integrates various large language models (LLMs) to provide a versatile, dynamic experience for users seeking enhanced document interaction.",
+			"TextTalk is an advanced AI-powered web application that revolutionizes PDF interaction through natural language processing. Built with LangChain and Vercel AI SDK, it empowers users to seamlessly query PDF documents and receive contextually accurate responses, transforming static documents into interactive knowledge bases.",
 		techStack: [
 			"Next.js",
 			"Prisma ORM",
@@ -218,7 +218,8 @@ export const projects = [
 			"Clerk",
 			"LangChain.js",
 			"Gemini LLM",
-			"SupabaseVectorStore ",
+			"Pinecone",
+			"Vercel Ai sdk",
 			"uploadthing",
 		],
 		githubUrl: "https://github.com/Abdullah-dev0/TextTalk",
@@ -231,31 +232,23 @@ export const projects = [
 			},
 			{
 				id: "2",
-				description: "🌐 Fetches related PDFs from the internet for enhanced context",
-			},
-			{
-				id: "3",
 				description: "🌍 Supports multiple languages for global accessibility",
 			},
 			{
-				id: "4",
+				id: "3",
 				description: "🧠 Integrates multiple large language models (LLMs) for diverse responses",
 			},
 			{
-				id: "5",
-				description: "🔄 Paraphrasing and summarization capabilities for quick insights",
-			},
-			{
-				id: "6",
+				id: "4",
 				description: "🔒 User authentication powered by Clerk",
 			},
 			{
-				id: "7",
+				id: "5",
 				description: "💽 MongoDB for user data storage",
 			},
 			{
-				id: "8",
-				description: "📊 Vector management with SupabaseVectorStore and Pinecone embeddings",
+				id: "6",
+				description: "📊 Vector management with Pinecone embeddings",
 			},
 		],
 	},
