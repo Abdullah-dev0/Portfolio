@@ -370,7 +370,7 @@ export const socialLinks = [
 	{
 		id: "3",
 		name: "Twitter",
-		url: "https://x.com/Abdu_lah14",
+		url: "https://x.com/Abdul_ah14",
 		icon: "/icons/twitter.svg",
 		className: "invert",
 	},
