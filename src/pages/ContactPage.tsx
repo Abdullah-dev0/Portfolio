@@ -65,6 +65,7 @@ const ContactPage = () => {
 	const onSubmit = async (data: z.infer<typeof formSchema>) => {
 		await handleSubmitSpree(data);
 	};
+
 	return (
 		<div className="section-spacing">
 			<SEOHead
