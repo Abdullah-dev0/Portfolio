@@ -29,7 +29,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 		"Portfolio",
 		"Software Engineer",
 	],
-	image = "/images/og-image.jpg",
+	// Default OG/Twitter image (homepage screenshot)
+	image = "/images/portfolio.png",
 	url = "https://abdullahtech.me",
 	type = "website",
 	publishedTime,
@@ -50,9 +51,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 		url: fullUrl,
 		image: fullImageUrl,
 		sameAs: [
-			"https://github.com/your-github",
-			"https://linkedin.com/in/your-linkedin",
-			"https://twitter.com/your-twitter",
+			"https://github.com/Abdullah-dev0",
+			"https://www.linkedin.com/in/abdullah-devv",
+			"https://x.com/Abdul_ah14",
+			"https://dev.to/abdullah-dev0",
 		],
 		knowsAbout: [
 			"JavaScript",
@@ -100,8 +102,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 			<meta name="twitter:description" content={description} />
 			<meta name="twitter:image" content={fullImageUrl} />
 			<meta name="twitter:image:alt" content={`${author} - Full Stack Developer`} />
-			<meta name="twitter:creator" content="@your-twitter" />
-			<meta name="twitter:site" content="@your-twitter" />
+			<meta name="twitter:creator" content="@Abdul_ah14" />
+			<meta name="twitter:site" content="@Abdul_ah14" />
 
 			{/* Article specific meta tags */}
 			{type === "article" && publishedTime && <meta property="article:published_time" content={publishedTime} />}

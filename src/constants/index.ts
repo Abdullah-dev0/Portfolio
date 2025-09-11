@@ -383,3 +383,6 @@ export const socialLinks = [
 		className: "invert",
 	},
 ];
+
+// Primary contact email used in the Contact page CTA. Update this with your real email.
+export const contactEmail = "abdulah14200@gmail.com";
