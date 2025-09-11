@@ -90,6 +90,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 			<meta property="og:title" content={fullTitle} />
 			<meta property="og:description" content={description} />
 			<meta property="og:image" content={fullImageUrl} />
+			<meta property="og:image:width" content="1200" />
+			<meta property="og:image:height" content="630" />
 			<meta property="og:image:alt" content={`${author} - Full Stack Developer`} />
 			<meta property="og:url" content={fullUrl} />
 			<meta property="og:type" content={type} />
@@ -122,6 +124,19 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 
 			{/* Structured Data */}
 			<script type="application/ld+json">{JSON.stringify(structuredData || defaultStructuredData)}</script>
+			<script type="application/ld+json">
+				{JSON.stringify({
+					"@context": "https://schema.org",
+					"@type": "WebSite",
+					name: "Abdullah Portfolio",
+					url: "https://abdullahtech.me",
+					potentialAction: {
+						"@type": "SearchAction",
+						target: "https://abdullahtech.me/search?q={search_term_string}",
+						queryInput: "required name=search_term_string",
+					},
+				})}
+			</script>
 		</Helmet>
 	);
 };
