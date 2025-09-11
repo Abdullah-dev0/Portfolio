@@ -1,0 +1,19 @@
+{
+	"name": "Abdullah Portfolio",
+	"short_name": "Abdullah",
+	"description": "Abdullah – Full Stack Developer portfolio showcasing projects, blogs and skills.",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"background_color": "#000000",
+	"theme_color": "#000000",
+	"lang": "en",
+	"icons": [
+		{
+			"src": "/favicon.ico",
+			"sizes": "32x32 48x48 64x64",
+			"type": "image/x-icon"
+		}
+	]
+}
