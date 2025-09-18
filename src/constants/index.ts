@@ -370,7 +370,7 @@ export const socialLinks = [
 	{
 		id: "3",
 		name: "Twitter",
-		url: "https://x.com/Abdu_lah14",
+		url: "https://x.com/Abdul_ah14",
 		icon: "/icons/twitter.svg",
 		className: "invert",
 	},
@@ -383,3 +383,6 @@ export const socialLinks = [
 		className: "invert",
 	},
 ];
+
+// Primary contact email used in the Contact page CTA. Update this with your real email.
+export const contactEmail = "abdulah14200@gmail.com";

@@ -22,16 +22,17 @@ export const seoConfig = {
 			"Software Engineer",
 		],
 		author: "Abdullah",
-		twitterHandle: "@your-twitter",
-		image: "/images/og-image.jpg",
+		// Updated with real Twitter (X) handle & new homepage screenshot OG image
+		twitterHandle: "@Abdul_ah14",
+		image: "/images/portfolio.png",
 	},
 
-	// Social media links (update with your actual profiles)
+	// Social media links (real profiles)
 	socialLinks: {
-		github: "https://github.com/your-github",
-		linkedin: "https://linkedin.com/in/your-linkedin",
-		twitter: "https://twitter.com/your-twitter",
-		email: "your-email@example.com",
+		github: "https://github.com/Abdullah-dev0",
+		linkedin: "https://www.linkedin.com/in/abdullah-devv",
+		twitter: "https://x.com/Abdul_ah14",
+		email: "abdulah14200@gmail.com",
 	},
 
 	// JSON-LD structured data templates
@@ -41,11 +42,14 @@ export const seoConfig = {
 			"@type": "Person",
 			name: "Abdullah",
 			jobTitle: "Full Stack Developer",
+			email: "mailto:abdulah14200@gmail.com",
 			url: "https://abdullahtech.me",
+			image: "https://abdullahtech.me/images/portfolio.png",
 			sameAs: [
-				"https://github.com/your-github",
-				"https://linkedin.com/in/your-linkedin",
-				"https://twitter.com/your-twitter",
+				"https://github.com/Abdullah-dev0",
+				"https://www.linkedin.com/in/abdullah-devv",
+				"https://x.com/Abdul_ah14",
+				"https://dev.to/abdullah-dev0",
 			],
 			knowsAbout: [
 				"JavaScript",
@@ -62,6 +66,20 @@ export const seoConfig = {
 				"Web Development",
 				"Software Engineering",
 			],
+		},
+		// WebSite structured data (helpful for Sitelinks & Search)
+		website: {
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			name: "Abdullah Portfolio",
+			url: "https://abdullahtech.me",
+			description:
+				"Experienced Full Stack Developer specializing in React, Node.js, TypeScript, and modern web technologies.",
+			publisher: {
+				"@type": "Person",
+				name: "Abdullah",
+			},
+			inLanguage: "en",
 		},
 	},
 };
