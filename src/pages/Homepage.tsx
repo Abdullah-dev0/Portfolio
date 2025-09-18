@@ -12,7 +12,7 @@ const HomePage = () => {
 		const resumeUrl = "/Abdullah.pdf";
 		const link = document.createElement("a");
 		link.href = resumeUrl;
-		link.download = "Abdullah_Resume.pdf"; // You can specify the downloaded file name
+		link.download = "Abdullah.pdf"; // You can specify the downloaded file name
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
