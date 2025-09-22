@@ -6,16 +6,21 @@ export const navLinks = [
 	},
 	{
 		id: "1",
+		name: "Resume",
+		path: "/resume",
+	},
+	{
+		id: "2",
 		name: "Blogs",
 		path: "/blogs",
 	},
 	{
-		id: "2",
+		id: "3",
 		name: "Projects",
 		path: "/projects",
 	},
 	{
-		id: "3",
+		id: "4",
 		name: "Contact",
 		path: "/contact",
 	},
@@ -334,19 +339,14 @@ export const skills = [
 		name: "Docker",
 		icon: "/icons/docker.svg",
 	},
-	{
-		id: "16",
-		name: "kubernetes",
-		icon: "/icons/kubernetes.svg",
-	},
 
 	{
-		id: "17",
+		id: "16",
 		name: "Redis",
 		icon: "/icons/redis.svg",
 	},
 	{
-		id: "18",
+		id: "17",
 		name: "Aws",
 		icon: "/icons/aws.svg",
 		className: "invert",

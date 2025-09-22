@@ -4,20 +4,10 @@ import ProjectSection from "@/components/shared/projectSection";
 import Skills from "@/components/shared/skills";
 import SEOHead from "@/components/seo/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Download, Sparkles } from "lucide-react";
+import { ArrowRight, Code, FileText, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
-	const handleDownloadResume = () => {
-		const resumeUrl = "/Abdullah.pdf";
-		const link = document.createElement("a");
-		link.href = resumeUrl;
-		link.download = "Abdullah.pdf"; // You can specify the downloaded file name
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
-	};
-
 	const homePageStructuredData = {
 		"@context": "https://schema.org",
 		"@type": "ProfilePage",
@@ -98,10 +88,12 @@ const HomePage = () => {
 							<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 						</Button>
 					</Link>
-					<Button onClick={handleDownloadResume} variant="outline" size="lg" className="group">
-						<Download className="mr-2 h-4 w-4" />
-						Download Resume
-					</Button>
+					<Link to="/resume">
+						<Button variant="outline" size="lg" className="group">
+							<FileText className="mr-2 h-4 w-4" />
+							View Resume
+						</Button>
+					</Link>
 				</div>
 
 				{/* Quick Stats */}
