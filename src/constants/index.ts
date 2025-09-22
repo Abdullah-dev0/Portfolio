@@ -334,19 +334,14 @@ export const skills = [
 		name: "Docker",
 		icon: "/icons/docker.svg",
 	},
-	{
-		id: "16",
-		name: "kubernetes",
-		icon: "/icons/kubernetes.svg",
-	},
 
 	{
-		id: "17",
+		id: "16",
 		name: "Redis",
 		icon: "/icons/redis.svg",
 	},
 	{
-		id: "18",
+		id: "17",
 		name: "Aws",
 		icon: "/icons/aws.svg",
 		className: "invert",
