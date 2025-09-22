@@ -11,6 +11,7 @@ import ErrorPage from "./pages/ErrorPage.tsx";
 import HomePage from "./pages/Homepage.tsx";
 import ProjectDetails from "./pages/ProjectDetails.tsx";
 import ProjectsPage from "./pages/Projectspage.tsx";
+import ResumePage from "./pages/ResumePage.tsx";
 import { BlogProvider } from "./context/blog.tsx";
 
 const router = createBrowserRouter(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
 			<Route path="projects/:slug" element={<ProjectDetails />} />
 			<Route path="contact" element={<ContactPage />} />
 			<Route path="about" element={<AboutMe />} />
+			<Route path="resume" element={<ResumePage />} />
 			<Route path="*" element={<ErrorPage />} />
 		</Route>,
 	),
