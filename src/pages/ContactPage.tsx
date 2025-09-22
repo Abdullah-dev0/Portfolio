@@ -1,4 +1,3 @@
-import ContactHeader from "@/components/contact/ContactHeader";
 import EmailCTA from "@/components/contact/EmailCTA";
 import SocialLinks from "@/components/contact/SocialLinks";
 import SEOHead from "@/components/seo/SEOHead";
@@ -43,7 +42,6 @@ const ContactPage = () => {
 			/>
 			<div className="container-custom max-w-5xl">
 				<div className="space-y-20">
-					<ContactHeader />
 					<EmailCTA />
 					<SocialLinks />
 				</div>
