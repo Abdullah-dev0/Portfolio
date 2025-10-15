@@ -257,6 +257,47 @@ export const projects = [
 			},
 		],
 	},
+	{
+		id: "6",
+		slug: "BetterAuth-Starter-Kit",
+		description:
+			"A full-featured authentication boilerplate built with Next.js 15, BetterAuth, and Prisma offering social logins, email verification, password resets, and clean, extensible architecture for modern apps.",
+		techStack: ["Next.js 15", "TypeScript", "BetterAuth", "Prisma", "Neon Postgres", "Nodemailer", "resent"],
+		githubUrl: "https://github.com/Abdullah-dev0/SecureStart",
+		liveLink: "https://securestart.netlify.app",
+		img: "/images/betterAuthKit.png",
+		features: [
+			{
+				id: "1",
+				description:
+					"Implements authentication with BetterAuth, including Google OAuth and email/password flows for flexible and secure user access.",
+			},
+			{
+				id: "2",
+				description: "Adds password reset via secure email link using Nodemailer integration and server-side hooks.",
+			},
+			{
+				id: "3",
+				description:
+					"Restricts access to specific domains (e.g., only @gmail.com) through custom BetterAuth plugins for enhanced control.",
+			},
+			{
+				id: "4",
+				description:
+					"Implements email verification and post-signup hooks to trigger custom actions like notifications or logging.",
+			},
+			{
+				id: "5",
+				description:
+					"Integrates Neon Postgres with Prisma for clean schema management, migrations, and scalable database design.",
+			},
+			{
+				id: "6",
+				description:
+					"Follows modern Next.js 15 App Router patterns with TypeScript for clean, maintainable, and production-ready code structure.",
+			},
+		],
+	},
 ];
 
 export const skills = [

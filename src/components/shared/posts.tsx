@@ -16,7 +16,7 @@ const Posts = ({ slug, description, date, isExternal }: Post) => {
 				<div className="flex-1 space-y-3">
 					<div className="flex items-start justify-between gap-2">
 						<h3 className="text-lg font-semibold line-clamp-2 group-hover:text-primary transition-colors duration-200">
-							{slug}
+							{slug.split("-").join(" ")}
 						</h3>
 						{isExternal && (
 							<ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex-shrink-0" />

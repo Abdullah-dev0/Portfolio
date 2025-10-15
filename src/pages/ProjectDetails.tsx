@@ -94,7 +94,7 @@ const ProjectDetails = () => {
 				</div>
 				{/* Project Header */}
 				<div className="text-center space-y-6 slide-up">
-					<h1 className="text-4xl md:text-5xl font-bold">{project.slug}</h1>
+					<h1 className="text-4xl md:text-5xl font-bold">{project.slug.split("-").join(" ")}</h1>
 					<p className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">{project.description}</p>
 				</div>
 				{/* Project Image */}
