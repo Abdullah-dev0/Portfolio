@@ -36,6 +36,32 @@ export const projects = [
 		githubUrl: "https://github.com/Abdullah-dev0/JusTalk",
 		liveLink: "https://jus-talk.vercel.app",
 		img: "/images/justalk.png",
+		stats: [
+			{
+				id: "1",
+				icon: "Star",
+				label: "Project",
+				value: "Featured",
+			},
+			{
+				id: "2",
+				icon: "Calendar",
+				label: "Year",
+				value: "2024",
+			},
+			{
+				id: "3",
+				icon: "Users",
+				label: "Developer",
+				value: "Solo",
+			},
+			{
+				id: "4",
+				icon: "Github",
+				label: "Source",
+				value: "Open",
+			},
+		],
 		features: [
 			{
 				id: "1",
@@ -89,6 +115,32 @@ export const projects = [
 		githubUrl: "https://github.com/Abdullah-dev0/NowTalk",
 		liveLink: "https://now-talk-omega.vercel.app",
 		img: "/images/nowtalk.png",
+		stats: [
+			{
+				id: "1",
+				icon: "Star",
+				label: "Project",
+				value: "Featured",
+			},
+			{
+				id: "2",
+				icon: "Calendar",
+				label: "Year",
+				value: "2024",
+			},
+			{
+				id: "3",
+				icon: "Users",
+				label: "Developer",
+				value: "Solo",
+			},
+			{
+				id: "4",
+				icon: "Github",
+				label: "Source",
+				value: "Open",
+			},
+		],
 		features: [
 			{
 				id: "1",
@@ -116,6 +168,32 @@ export const projects = [
 		githubUrl: "https://github.com/Abdullah-dev0/Effortless-Events",
 		liveLink: "https://effortless-events.vercel.app",
 		img: "/images/event.png",
+		stats: [
+			{
+				id: "1",
+				icon: "Star",
+				label: "Project",
+				value: "Featured",
+			},
+			{
+				id: "2",
+				icon: "Calendar",
+				label: "Year",
+				value: "2024",
+			},
+			{
+				id: "3",
+				icon: "Users",
+				label: "Developer",
+				value: "Solo",
+			},
+			{
+				id: "4",
+				icon: "Github",
+				label: "Source",
+				value: "Open",
+			},
+		],
 		features: [
 			{
 				id: "1",
@@ -155,6 +233,32 @@ export const projects = [
 			"I've crafted a robust and secure authentication starter pack for Next.js, leveraging the latest features in Next Auth v5. This starter pack simplifies the integration of authentication in your Next.js applications, ensuring a seamless and secure user experience.",
 		techStack: ["Next.js", "Tailwind CSS", "Auth.js", "TypeScript"],
 		githubUrl: "https://github.com/Abdullah-dev0/Authjs-starter-pack",
+		stats: [
+			{
+				id: "1",
+				icon: "Star",
+				label: "Project",
+				value: "Starter Kit",
+			},
+			{
+				id: "2",
+				icon: "Calendar",
+				label: "Year",
+				value: "2024",
+			},
+			{
+				id: "3",
+				icon: "Users",
+				label: "Developer",
+				value: "Solo",
+			},
+			{
+				id: "4",
+				icon: "Github",
+				label: "Source",
+				value: "Open",
+			},
+		],
 		features: [
 			{
 				id: "1",
@@ -230,6 +334,32 @@ export const projects = [
 		githubUrl: "https://github.com/Abdullah-dev0/TextTalk",
 		liveLink: "https://texttalk.abdulah.site",
 		img: "/images/Texttalk.jpg",
+		stats: [
+			{
+				id: "1",
+				icon: "Star",
+				label: "Project",
+				value: "AI-Powered",
+			},
+			{
+				id: "2",
+				icon: "Calendar",
+				label: "Year",
+				value: "2025",
+			},
+			{
+				id: "3",
+				icon: "Users",
+				label: "Developer",
+				value: "Solo",
+			},
+			{
+				id: "4",
+				icon: "Github",
+				label: "Source",
+				value: "Open",
+			},
+		],
 		features: [
 			{
 				id: "1",
@@ -266,6 +396,32 @@ export const projects = [
 		githubUrl: "https://github.com/Abdullah-dev0/SecureStart",
 		liveLink: "https://securestart.netlify.app",
 		img: "/images/betterAuthKit.png",
+		stats: [
+			{
+				id: "1",
+				icon: "Star",
+				label: "Project",
+				value: "Boilerplate",
+			},
+			{
+				id: "2",
+				icon: "Calendar",
+				label: "Year",
+				value: "2025",
+			},
+			{
+				id: "3",
+				icon: "Users",
+				label: "Developer",
+				value: "Solo",
+			},
+			{
+				id: "4",
+				icon: "Github",
+				label: "Source",
+				value: "Open",
+			},
+		],
 		features: [
 			{
 				id: "1",

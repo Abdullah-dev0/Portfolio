@@ -13,6 +13,13 @@ export type Feature = {
 	description: string;
 };
 
+export type ProjectStat = {
+	id: string;
+	icon: string;
+	label: string;
+	value: string;
+};
+
 export type Project = {
 	id: string;
 	slug: string;
@@ -22,4 +29,5 @@ export type Project = {
 	liveLink: string;
 	img: string;
 	features: Feature[];
+	stats: ProjectStat[];
 };

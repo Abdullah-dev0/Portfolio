@@ -111,26 +111,24 @@ const ProjectDetails = () => {
 				)}
 				{/* Project Stats */}
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-6 slide-up">
-					<div className="text-center card-spacing card-subtle">
-						<Star className="h-6 w-6 text-primary mx-auto mb-2" />
-						<div className="text-2xl font-bold">Featured</div>
-						<div className="text-sm text-muted-foreground">Project</div>
-					</div>
-					<div className="text-center card-spacing card-subtle">
-						<Calendar className="h-6 w-6 text-primary mx-auto mb-2" />
-						<div className="text-2xl font-bold">2024</div>
-						<div className="text-sm text-muted-foreground">Year</div>
-					</div>
-					<div className="text-center card-spacing card-subtle">
-						<Users className="h-6 w-6 text-primary mx-auto mb-2" />
-						<div className="text-2xl font-bold">Solo</div>
-						<div className="text-sm text-muted-foreground">Developer</div>
-					</div>
-					<div className="text-center card-spacing card-subtle">
-						<Github className="h-6 w-6 text-primary mx-auto mb-2" />
-						<div className="text-2xl font-bold">Open</div>
-						<div className="text-sm text-muted-foreground">Source</div>
-					</div>
+					{project.stats.map((stat) => {
+						const IconComponent =
+							stat.icon === "Star"
+								? Star
+								: stat.icon === "Calendar"
+								? Calendar
+								: stat.icon === "Users"
+								? Users
+								: Github;
+
+						return (
+							<div key={stat.id} className="text-center card-spacing card-subtle">
+								<IconComponent className="h-6 w-6 text-primary mx-auto mb-2" />
+								<div className="text-2xl font-bold">{stat.value}</div>
+								<div className="text-sm text-muted-foreground">{stat.label}</div>
+							</div>
+						);
+					})}
 				</div>
 				{/* Tech Stack */}
 				<div className="space-y-6 slide-up">
